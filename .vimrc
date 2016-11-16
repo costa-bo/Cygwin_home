@@ -22,6 +22,8 @@ Plugin 'vim-scripts/CCTree'
 Plugin 'vim-scripts/Conque-GDB'
 "Plugin 'Valloric/YouCompleteMe'
 "Plugin 'klen/python-mode'
+"Plugin 'vim-scripts/CCTree'
+"Plugin 'klen/python-mode'
 Plugin 'vim-scripts/Tabmerge'
 Plugin 'uguu-org/vim-matrix-screensaver'
 Plugin 'vim-scripts/TeTrIs.vim'
@@ -60,12 +62,12 @@ filetype plugin indent on    " required
 " see :h vundle for more details or wiki for FAQ
 " Put your non-Plugin stuff after this line
 
-let g:ctrlp_working_path_mode = 0
-let g:ctrlp_max_files = 0
-let g:ctrlp_user_command = ['.svn/','cat %s/cscope.files']
-
-set tags=$NG_ROOT/tags,tags; " tell Vim where to find your tags
-set tags=tags;/
+"let g:ctrlp_working_path_mode = 0
+"let g:ctrlp_max_files = 0
+"let g:ctrlp_user_command = ['.svn/','cat %s/cscope.files']
+"
+"set tags=$NG_ROOT/tags,tags; " tell Vim where to find your tags
+"set tags=tags;/
 
 set cursorline    " cursor line
 set laststatus=2  " display the status line always
@@ -73,12 +75,16 @@ set statusline+=%f\:%l(%L)\ %P\ %m\ %r
 set number        " always show line numbers
 set expandtab     " instead of tabs enter <tabstop> spaces when pressing <TAB> key
 set shiftwidth=4  " use 4 spaces for the autoindenting feature
+set softtabstop=4
 set tabstop=4     " a tab is 4 spaces
 set ignorecase    " ignore case when searching
 set incsearch     " incremental search (start search while typing)
 set hlsearch      " highlights search text
 set showcmd       " count lines in Visual Mode
 set mouse=a       " enable using the mouse if terminal emulator
+set paste         " identation corected paste from clipboard
+"set nocscopetag
+set hidden        " becomes hidden when it is abandoned.
 "set t_ti=""       " NO!!! very dangerus comand
 
 " it skata kanoun auta?
@@ -91,12 +97,14 @@ let mapleader=","
 
 colorscheme badwolf
 
-nmap <C-@>s <C-W><C-S> :cs find s <C-R>=expand("<cword>")<CR><CR>
+"nmap <C-@>s <C-W><C-S> :cs find s <C-R>=expand("<cword>")<CR><CR>
 
 map <C-h> <C-W>h
 map <C-l> <C-W>l
 map <C-j> <C-W>j
 map <C-k> <C-W>k
+
+"map <C-]> g] " list tags(not jump imediatly
 
 "open a NERDTree automatically when vim starts up if no files were specified
 "autocmd StdinReadPre * let s:std_in=1
@@ -106,3 +114,23 @@ map <C-k> <C-W>k
 nnoremap <leader>a :silent execute "grep! -R --include=\*.{c,cpp,h,py} --exclude-dir=./SS_6WIND* " . shellescape('<cword>') .  " ."<cr>:copen 12<cr>:redraw!<cr>
 nnoremap <leader>A :silent execute "grep! -R --include=\*.{c,cpp,h,py} --exclude-dir=./SS_6WIND* " . shellescape('<cWORD>') .  " ."<cr>:copen 12<cr>:redraw!<cr>
 
+
+"" opens search results in a window w/ links and highlight the matches
+"command! -nargs=+ Grep execute 'silent grep! -I -r -n --exclude *.{json} . -e <args>' | copen | execute 'silent /<args>'
+"
+"" Check if NERDTree is open or active
+"function! rc:isNERDTreeOpen()        
+"  return exists("t:NERDTreeBufName") && (bufwinnr(t:NERDTreeBufName) != -1)
+"endfunction
+"
+"" Call NERDTreeFind iff NERDTree is active, current window contains a modifiable
+"" file, and we're not in vimdiff
+"function! rc:syncTree()
+"  if &modifiable && rc:isNERDTreeOpen() && strlen(expand('%')) > 0 && !&diff
+"    NERDTreeFind
+"    wincmd p
+"  endif
+"endfunction
+"
+"" Highlight currently open buffer in NERDTree
+"autocmd BufEnter * call rc:syncTree()
