@@ -106,8 +106,6 @@ export CGRLIC=1
 export DISABLE_COVERAGE=1
 export PYTHONPATH="$PYTHONPATH:$SRC_ROOT/scripts/ngisug:$TEST_ROOT/unittest/scripts/ngisug/stubs:$TEST_ROOT/unittest/scripts/ngisug/src"
 
-echo ''
-
 #ALIASES
 alias sb="source ~/.bash_profile"
 alias ls="ls -h -F --color=auto"
