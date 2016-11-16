@@ -51,13 +51,12 @@ LIGHT_PURPLE="\[\e[1;35m\]"
 # # 8-bit locale (English, USA), to read umlauts in vi(1).
 # LANG=en_US.ISO_8859-1; export LANG
 
-git config --global http.proxy http://10.144.1.10:8080
-
+source /usr/share/git-core/contrib/completion/git-prompt.sh
 export PS1="$LIGHT_GRAY[\t] $ORANGE\h$NO_COLOR:$YELLOW\w$WHITE\$(__git_ps1)$GREEN\j\$ $NO_COLOR"
 
 #SETUP
 i=1
-for d in work/*; do
+for d in ~/work/*; do
     if [ -d "$d" ]; then
          CHOICES[i]=$d
          echo -n "$i) " && basename "$d"
@@ -92,13 +91,13 @@ export PYTHONPATH="$PYTHONPATH:$SRC_ROOT/scripts/ngisug:$TEST_ROOT/unittest/scri
 echo ''
 
 #ALIASES
-alias sb="source ~/.bash_profile"
+alias sb="source ~/.bashrc"
 alias ls="ls -h -F --color=auto"
 alias la="ls -la"
 alias ll="la"
 alias lf="less +F"
 alias grep="grep --color"
-alias tmux='tmux -2 -u'
+alias tmux='tmux -2'
 alias compare="kompare -o - &"
 alias hscp="history | grep scp"
 alias u7="export UNITTEST_LOGLEVEL=7"
