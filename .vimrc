@@ -69,9 +69,18 @@ filetype plugin indent on    " required
 "set tags=$NG_ROOT/tags,tags; " tell Vim where to find your tags
 "set tags=tags;/
 
+" Status Line {
+    set laststatus=2            " display the status line always
+    set statusline=
+    set statusline+=%f\:        " filename
+    set statusline+=%l          " line number
+    set statusline+=(%L)\       " total lines
+    set statusline+=%P\         " percent through file
+    set statusline+=%m\         " modified flag
+    set statusline+=%r\         " read only flag
+    set statusline+=buffer\:%-10.3n\    " buffer number
+"}
 set cursorline    " cursor line
-set laststatus=2  " display the status line always
-set statusline+=%f\:%l(%L)\ %P\ %m\ %r
 set number        " always show line numbers
 set expandtab     " instead of tabs enter <tabstop> spaces when pressing <TAB> key
 set shiftwidth=4  " use 4 spaces for the autoindenting feature

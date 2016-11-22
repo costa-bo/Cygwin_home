@@ -65,7 +65,7 @@ if [ -f /etc/bash_completion ]; then
       . /etc/bash_completion
 fi
 
-export PS1="$ORANGE\h$NO_COLOR:$YELLOW\w$WHITE\$(__git_ps1)$GREEN\j\$ $NO_COLOR"
+export PS1="$ORANGE\[\]Centos$NO_COLOR:$YELLOW\w$WHITE\$(__git_ps1)$GREEN\j\$ $NO_COLOR"
 
 i=1
 for d in /home/$USER/work/*; do
