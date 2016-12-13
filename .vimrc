@@ -66,7 +66,7 @@ filetype plugin indent on    " required
 "let g:ctrlp_max_files = 0
 "let g:ctrlp_user_command = ['.svn/','cat %s/cscope.files']
 "
-"set tags=$NG_ROOT/tags,tags; " tell Vim where to find your tags
+set tags=$NG_ROOT/tags,tags; " tell Vim where to find your tags
 "set tags=tags;/
 
 " Status Line {
