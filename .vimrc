@@ -29,6 +29,8 @@ Plugin 'uguu-org/vim-matrix-screensaver'
 Plugin 'vim-scripts/TeTrIs.vim'
 Plugin 'sjl/badwolf'
 Plugin 'majutsushi/tagbar'
+Plugin 'nathanalderson/yang.vim'
+Plugin 'tpope/vim-fugitive'
 
 " plugin from http://vim-scripts.org/vim/scripts.html
 "Plugin 'L9'
