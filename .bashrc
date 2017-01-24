@@ -106,7 +106,7 @@ export CGRLIC=1
 export DISABLE_COVERAGE=1
 export PYTHONPATH="$PYTHONPATH:$SRC_ROOT/scripts/ngisug:$TEST_ROOT/unittest/scripts/ngisug/stubs:$TEST_ROOT/unittest/scripts/ngisug/src"
 
-#ALIASES
+# ALIASES
 alias sb="source ~/.bash_profile"
 alias ls="ls -h -F --color=auto"
 alias la="ls -la"
@@ -119,7 +119,9 @@ alias compare="kompare -o - &"
 #alias fail="grep -i "failures=.[^0]." $NG_ROOT/test/unittest/scripts/ngisug/*.xml"
 #alias error="grep -i "errors=.[^0]." $NG_ROOT/test/unittest/scripts/ngisug/*.xml"
 #alias erfa="grep -i 'errors=.[^0].\|failures=.[^0].' $NG_ROOT/test/unittest/scripts/ngisug/*.xml"
+alias etcdgr="etcdctl ls --recursive -p | grep -v '/$' | xargs -n 1 -I% sh -c 'echo -n %:; etcdctl get %;'"
 
+#   SSH
 alias CORIN="ssh bogiatza@10.158.67.161"
 alias FSB="ssh bogiatza@fsb.dev.cic.nsn-rdnet.net"
 alias CAREMAN4="ssh micts@10.135.72.13"
@@ -130,6 +132,7 @@ alias NOKIKANA="ssh root@10.23.83.242"
 alias BALDUR="ssh bogiatza@10.85.40.151"
 alias HYPERION="ssh bogiatza@10.158.67.84"
 alias CALADAN="ssh bogiatza@10.158.67.81"
+alias EE_vtas="ssh  -i ~/ee_cloud/kbo_key_pair1.pem root@10.157.4.12"
 
 # # some useful aliases
 # alias h='fc -l'
@@ -137,10 +140,10 @@ alias CALADAN="ssh bogiatza@10.158.67.81"
 # alias ll='ls -laFo'
 # alias g='egrep -i'
  
-#                         FUNNLY
+#   FUNNLY
 alias data='while true; do head -c200 /dev/urandom | od -An -w50 -x | grep -E --color "([[:alpha:]][[:digit:]]){2}"; sleep 0.5; done'
 
-#                         DIRECTORIES                         
+#   DIRECTORIES                         
 alias b="cd ${NG_ROOT}"
 alias clm="cd /home/costa/work/vgp_trunk/SS_CLM/clm/CLM-3.2"
 

@@ -31,6 +31,7 @@ Plugin 'sjl/badwolf'
 Plugin 'majutsushi/tagbar'
 Plugin 'nathanalderson/yang.vim'
 Plugin 'tpope/vim-fugitive'
+Plugin 'tmux-plugins/vim-tmux'
 
 " plugin from http://vim-scripts.org/vim/scripts.html
 "Plugin 'L9'
@@ -95,8 +96,12 @@ set showcmd       " count lines in Visual Mode
 set mouse=a       " enable using the mouse if terminal emulator
 set paste         " identation corected paste from clipboard
 "set nocscopetag
-set hidden        " becomes hidden when it is abandoned.
-"set t_ti=""       " NO!!! very dangerus comand
+"set hidden        " becomes hidden when it is abandoned.
+"set t_ti=""      " NO!!! very dangerus comand
+set foldmethod=syntax " fold functions on 1st level if its opening brace on first column
+set foldnestmax=2
+"set foldlevelstart=1 " apo pou na ksekinisi to folding
+set nobuflisted   "prevent a buffer from being added to the buffer list
 
 " it skata kanoun auta?
 set showmode      " always show what mode we're currently editing in
@@ -116,6 +121,7 @@ map <C-j> <C-W>j
 map <C-k> <C-W>k
 
 "map <C-]> g] " list tags(not jump imediatly
+
 
 "open a NERDTree automatically when vim starts up if no files were specified
 "autocmd StdinReadPre * let s:std_in=1
