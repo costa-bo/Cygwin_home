@@ -67,6 +67,11 @@ fi
 
 export PS1="$ORANGE\[\]Centos$NO_COLOR:$YELLOW\w$WHITE\$(__git_ps1)$GREEN\j\$ $NO_COLOR"
 
+#alias tmux='tmux -2 -u'
+if [ ! $TMUX ]; then 
+    tmux -2 -u
+fi
+
 i=1
 for d in /home/$USER/work/*; do
     if [ -d "$d" ]; then
@@ -105,6 +110,7 @@ export PYTHON=python
 export CGRLIC=1
 export DISABLE_COVERAGE=1
 export PYTHONPATH="$PYTHONPATH:$SRC_ROOT/scripts/ngisug:$TEST_ROOT/unittest/scripts/ngisug/stubs:$TEST_ROOT/unittest/scripts/ngisug/src"
+export no_proxy=localhost
 
 # ALIASES
 alias sb="source ~/.bash_profile"
@@ -113,8 +119,7 @@ alias la="ls -la"
 alias ll="la"
 alias lf="less +F"
 alias grep="grep --color"
-alias tmux='tmux -2 -u'
-#alias tmux='tmux -2'
+alias tmux='tmux -2'
 alias compare="kompare -o - &"
 #alias fail="grep -i "failures=.[^0]." $NG_ROOT/test/unittest/scripts/ngisug/*.xml"
 #alias error="grep -i "errors=.[^0]." $NG_ROOT/test/unittest/scripts/ngisug/*.xml"
@@ -132,7 +137,7 @@ alias NOKIKANA="ssh root@10.23.83.242"
 alias BALDUR="ssh bogiatza@10.85.40.151"
 alias HYPERION="ssh bogiatza@10.158.67.84"
 alias CALADAN="ssh bogiatza@10.158.67.81"
-alias EE_vtas="ssh  -i ~/ee_cloud/kbo_key_pair1.pem root@10.157.4.12"
+alias EE_vtas="ssh -i ~/ee_cloud/kbo_key_pair1.pem root@10.157.2.203"
 
 # # some useful aliases
 # alias h='fc -l'

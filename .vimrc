@@ -14,24 +14,35 @@ Plugin 'VundleVim/Vundle.vim'
 " The following are examples of different formats supported.
 " Keep Plugin commands between vundle#begin/end.
 " plugin on GitHub repo
-"Plugin 'tpope/vim-fugitive'
 Plugin 'scrooloose/nerdtree'
+Plugin 'majutsushi/tagbar'
+Plugin 'tpope/vim-fugitive'
 Plugin 'vim-scripts/IndexedSearch'
 Plugin 'vim-scripts/Mark--Karkat'
+Plugin 'vim-scripts/Tabmerge'
 Plugin 'vim-scripts/CCTree'
 Plugin 'vim-scripts/Conque-GDB'
 "Plugin 'Valloric/YouCompleteMe'
 "Plugin 'klen/python-mode'
 "Plugin 'vim-scripts/CCTree'
 Plugin 'ervandew/supertab'
-Plugin 'vim-scripts/Tabmerge'
+
+" Highlights
+Plugin 'nathanalderson/yang.vim'
+Plugin 'tmux-plugins/vim-tmux'
+Plugin 'octol/vim-cpp-enhanced-highlight'
+
+" ColorSchemes
+Plugin 'sjl/badwolf'
+Plugin 'morhetz/gruvbox'
+Plugin 'vim-scripts/pyte'
+Plugin 'altercation/vim-colors-solarized'
+Plugin 'rakr/vim-one'
+Plugin 'jonathanfilip/vim-lucius'
+
+" Games
 Plugin 'uguu-org/vim-matrix-screensaver'
 Plugin 'vim-scripts/TeTrIs.vim'
-Plugin 'sjl/badwolf'
-Plugin 'majutsushi/tagbar'
-Plugin 'nathanalderson/yang.vim'
-Plugin 'tpope/vim-fugitive'
-Plugin 'tmux-plugins/vim-tmux'
 
 " plugin from http://vim-scripts.org/vim/scripts.html
 "Plugin 'L9'
