@@ -125,6 +125,7 @@ alias compare="kompare -o - &"
 #alias error="grep -i "errors=.[^0]." $NG_ROOT/test/unittest/scripts/ngisug/*.xml"
 #alias erfa="grep -i 'errors=.[^0].\|failures=.[^0].' $NG_ROOT/test/unittest/scripts/ngisug/*.xml"
 alias etcdgr="etcdctl ls --recursive -p | grep -v '/$' | xargs -n 1 -I% sh -c 'echo -n %:; etcdctl get %;'"
+alias tree="tree -C" # use color 
 
 #   SSH
 alias CORIN="ssh bogiatza@10.158.67.161"
@@ -137,7 +138,7 @@ alias NOKIKANA="ssh root@10.23.83.242"
 alias BALDUR="ssh bogiatza@10.85.40.151"
 alias HYPERION="ssh bogiatza@10.158.67.84"
 alias CALADAN="ssh bogiatza@10.158.67.81"
-alias EE_vtas="ssh -i ~/ee_cloud/kbo_key_pair1.pem root@10.157.2.203"
+alias EE_vtas="ssh -i ~/ee_cloud/kbo_key_pair1.pem root@10.157.3.41"
 
 # # some useful aliases
 # alias h='fc -l'
