@@ -31,6 +31,8 @@ Plugin 'ervandew/supertab'
 Plugin 'nathanalderson/yang.vim'
 Plugin 'tmux-plugins/vim-tmux'
 Plugin 'octol/vim-cpp-enhanced-highlight'
+Plugin 'godlygeek/tabular'
+Plugin 'plasticboy/vim-markdown'
 
 " ColorSchemes
 Plugin 'sjl/badwolf'
@@ -39,6 +41,7 @@ Plugin 'vim-scripts/pyte'
 Plugin 'altercation/vim-colors-solarized'
 Plugin 'rakr/vim-one'
 Plugin 'jonathanfilip/vim-lucius'
+Plugin 'elzr/vim-json'
 
 " Games
 Plugin 'uguu-org/vim-matrix-screensaver'

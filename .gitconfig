@@ -17,6 +17,7 @@
     #List oneline commits for all branches
     lola = log --graph --decorate --pretty=oneline --abbrev-commit --all
     lof = log --graph  --pretty=format:'%C(yellow)%h%C(auto)%d %C(magenta)%an%Creset %s %C(cyan)%cd' --date=short
+    lofa = log --graph  --pretty=format:'%C(yellow)%h%C(auto)%d %C(magenta)%an%Creset %s %C(cyan)%cd' --date=short --all
     #see all the commits related to a file, with the diff of the changes
     fl = log -u
     #Find a file path in codebase

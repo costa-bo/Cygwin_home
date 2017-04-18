@@ -24,7 +24,7 @@ public:
 int main()
 {
     Mystring string("Hello, world!");
-    std::cout << string(7, 5); // start at index 7 and return 5 characters
+    std::cout << string(7, 5) << std::endl; // start at index 7 and return 5 characters
  
     return 0;
 }
