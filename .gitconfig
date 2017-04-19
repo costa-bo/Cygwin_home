@@ -56,5 +56,6 @@
     ui = true
 [push]
     default = nothing 
+    #default = simple
 [http]
 	proxy = http://10.144.1.10:8080

@@ -7,8 +7,8 @@ fi
 
 # User specific environment and startup programs
 
-PATH=$PATH:$HOME/.local/bin:$HOME/bin
+#PATH=$PATH:$HOME/.local/bin:$HOME/bin
 
 export PATH
 
-export HISTTIMEFORMAT="%d/%m/%y %T "
+#export HISTTIMEFORMAT="%d/%m/%y %T "
