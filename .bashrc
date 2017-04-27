@@ -74,7 +74,8 @@ alias vundle="git clone https://github.com/VundleVim/Vundle.vim.git ~/.vim/bundl
 alias etcdgr="etcdctl ls --recursive -p | grep -v '/$' | xargs -n 1 -I% sh -c 'echo -n %:; etcdctl get %;'"
 alias tree="tree -C" # use color 
 alias kgp="kubectl get pod"
-alias ibc="docker exec -i -t build /bin/bash"
+#alias ibc="docker exec -i -t build /bin/bash"
+alias ibc="~/bin/utasbuild ~/opentas"
 
 #   SSH
 alias CORIN="ssh bogiatza@10.158.67.161"
