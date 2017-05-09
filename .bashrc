@@ -78,6 +78,7 @@ alias kgp="kubectl get pod"
 alias ibc="~/bin/utasbuild ~/opentas"
 alias ilp="kubectl exec -it lmf-server bash"
 alias llmf="kubectl logs lmf-server "
+alias edf="export DUMMY_FILE_CLS=/ephemeral/opentas/pmod/SS_LNXlmf/tst/dummy_file_cls.json"
 
 #   SSH
 alias CORIN="ssh bogiatza@10.158.67.161"
