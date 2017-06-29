@@ -106,6 +106,7 @@ alias data='while true; do head -c200 /dev/urandom | od -An -w46 -x | grep -E --
 alias b="cd ${NG_ROOT}"
 alias clm="cd /home/costa/work/vgp_trunk/SS_CLM/clm/CLM-3.2"
 alias lmf="cd ~/opentas/pmod/SS_LNXlmf/"
+alias ft="cd ~/opentas/ft/vtas-testsuites/suites/FC014938"
 
 alias bin="cd ${SRC_ROOT}/bin"
 alias lib="cd ${SRC_ROOT}/lib"

@@ -44,6 +44,7 @@ Plugin 'jonathanfilip/vim-lucius'
 Plugin 'elzr/vim-json'
 Plugin 'xolox/vim-colorscheme-switcher' "change color schemes with <F8> & <Shift-F8> keys
 Plugin 'xolox/vim-misc' "needed by vim-colorscheme-switcher
+Plugin 'mfukar/robotframework-vim' 
 
 " Games
 Plugin 'uguu-org/vim-matrix-screensaver'
