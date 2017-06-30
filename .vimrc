@@ -23,7 +23,7 @@ Plugin 'vim-scripts/Tabmerge'
 Plugin 'vim-scripts/CCTree'
 Plugin 'vim-scripts/Conque-GDB'
 "Plugin 'Valloric/YouCompleteMe'
-"Plugin 'klen/python-mode'
+"Plugin 'python-mode/python-mode'
 "Plugin 'vim-scripts/CCTree'
 Plugin 'ervandew/supertab'
 
@@ -123,7 +123,7 @@ set nobuflisted   "prevent a buffer from being added to the buffer list
 " it skata kanoun auta?
 set showmode      " always show what mode we're currently editing in
 set clipboard=unnamed           " normal OS clipboard interaction
-set ttymouse=xterm2
+"set ttymouse=xterm2
 syntax enable
 
 let mapleader=","

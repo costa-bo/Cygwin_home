@@ -20,9 +20,10 @@ PATH=$PATH:/bin:/usr/sbin:/usr/bin:/usr/local/bin:$HOME/bin; export PATH
 #TERM=cons25;   export TERM
 
 BLOCKSIZE=K;    export BLOCKSIZE
-EDITOR=vim;     export EDITOR
+EDITOR=nvim;     export EDITOR
 PAGER=more;     export PAGER
-alias vi='vim'
+alias vi='nvim'
+alias vim='nvim'
 
 # Color definitions
 NO_COLOR="\[\e[0m\]"
@@ -77,6 +78,7 @@ alias kgp="kubectl get pod"
 #alias ibc="docker exec -i -t build /bin/bash"
 alias ibc="~/bin/utasbuild ~/opentas"
 alias ilp="kubectl exec -it lmf-server bash"
+alias inp="kubectl exec -it netconf-server bash"
 alias llmf="kubectl logs lmf-server "
 alias edf="export DUMMY_FILE_CLS=/ephemeral/opentas/pmod/SS_LNXlmf/tst/dummy_file_cls.json"
 
@@ -107,6 +109,7 @@ alias b="cd ${NG_ROOT}"
 alias clm="cd /home/costa/work/vgp_trunk/SS_CLM/clm/CLM-3.2"
 alias lmf="cd ~/opentas/pmod/SS_LNXlmf/"
 alias ft="cd ~/opentas/ft/vtas-testsuites/suites/FC014938"
+alias taf="cd ~/opentas/ft/vtas-taf"
 
 alias bin="cd ${SRC_ROOT}/bin"
 alias lib="cd ${SRC_ROOT}/lib"
