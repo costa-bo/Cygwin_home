@@ -38,6 +38,7 @@ syntax enable
 "End dein Scripts-------------------------
 
 
+set shiftwidth=4  " use 4 spaces for the autoindenting feature
 set runtimepath+=~/.vim,~/.vim/after
 set packpath+=~/.vim
 source ~/.vimrc

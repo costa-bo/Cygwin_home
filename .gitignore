@@ -5,6 +5,8 @@
 .vim
 .viminfo
 .NERDTreeBookmarks
+.cache
+.helm
 work
 a.out
 
