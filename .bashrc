@@ -53,6 +53,7 @@ if [ -f /etc/bash_completion ]; then
 fi
 
 #export PS1="$ORANGE\[\]Centos$NO_COLOR:$YELLOW\w$WHITE\$(__git_ps1)$GREEN\j\$ $NO_COLOR"
+export HISTTIMEFORMAT="%d/%m/%y %T "
 
 #alias tmux='tmux -2 -u'
 if [ ! $TMUX ]; then 
@@ -108,7 +109,8 @@ alias data='while true; do head -c200 /dev/urandom | od -An -w46 -x | grep -E --
 alias b="cd ${NG_ROOT}"
 alias clm="cd /home/costa/work/vgp_trunk/SS_CLM/clm/CLM-3.2"
 alias lmf="cd ~/opentas/pmod/SS_LNXlmf/"
-alias ft="cd ~/opentas/ft/vtas-testsuites/suites/FC014938"
+alias 938="cd ~/opentas/ft/vtas-testsuites/suites/FC014938"
+alias 191="cd ~/opentas/ft/vtas-testsuites/suites/FC014191"
 alias taf="cd ~/opentas/ft/vtas-taf"
 
 alias bin="cd ${SRC_ROOT}/bin"

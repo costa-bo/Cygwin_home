@@ -20,12 +20,12 @@ Plugin 'tpope/vim-fugitive'
 Plugin 'vim-scripts/IndexedSearch'
 Plugin 'vim-scripts/Mark--Karkat'
 Plugin 'vim-scripts/Tabmerge'
-Plugin 'vim-scripts/CCTree'
-Plugin 'vim-scripts/Conque-GDB'
+"Plugin 'vim-scripts/CCTree'
+"Plugin 'vim-scripts/Conque-GDB'
 "Plugin 'Valloric/YouCompleteMe'
 "Plugin 'python-mode/python-mode'
 "Plugin 'vim-scripts/CCTree'
-Plugin 'ervandew/supertab'
+"Plugin 'ervandew/supertab'
 
 " Highlights
 Plugin 'nathanalderson/yang.vim'
@@ -100,12 +100,15 @@ set tags=$NG_ROOT/tags,tags; " tell Vim where to find your tags
     set statusline+=%r\         " read only flag
     set statusline+=buffer\:%-10.3n\    " buffer number
 "}
-set cursorline    " cursor line
+set cursorline    " highlight cursor line
 set number        " always show line numbers
-set expandtab     " instead of tabs enter <tabstop> spaces when pressing <TAB> key
-set shiftwidth=4  " use 4 spaces for the autoindenting feature
-set softtabstop=4
+set showmatch     " show the matching part of the pair for [] {} and ()
+
 set tabstop=4     " a tab is 4 spaces
+"set expandtab     " expand tabs into spaces: Enter <tabstop> spaces when pressing <TAB> key
+set shiftwidth=4  " when using the >> or << commands, shift lines by 4 spaces
+set softtabstop=4
+
 set ignorecase    " ignore case when searching
 set incsearch     " incremental search (start search while typing)
 set hlsearch      " highlights search text
