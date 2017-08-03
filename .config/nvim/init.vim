@@ -104,11 +104,14 @@ set cursorline    " highlight cursor line
 set number        " always show line numbers
 set showmatch     " show the matching part of the pair for [] {} and ()
 
+" Tabs
 set tabstop=4     " a tab is 4 spaces
-"set expandtab     " expand tabs into spaces: Enter <tabstop> spaces when pressing <TAB> key
+set expandtab     " expand tabs into spaces: Enter <tabstop> spaces when pressing <TAB> key
 set shiftwidth=4  " when using the >> or << commands, shift lines by 4 spaces
 set softtabstop=4
+set autoindent
 
+set fileformat=unix
 set ignorecase    " ignore case when searching
 set incsearch     " incremental search (start search while typing)
 set hlsearch      " highlights search text
@@ -127,6 +130,11 @@ set nobuflisted   "prevent a buffer from being added to the buffer list
 set showmode      " always show what mode we're currently editing in
 set clipboard=unnamed           " normal OS clipboard interaction
 "set ttymouse=xterm2
+
+au BufNewFile,BufRead *.py 
+	\ set foldmethod=indent |
+	\ set foldlevel=1 |
+	\ set textwidth=79
 
 let mapleader=","
 

@@ -4,7 +4,6 @@
 .ssh
 .vim
 .viminfo
-.NERDTreeBookmarks
 .cache
 .helm
 work
