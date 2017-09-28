@@ -45,14 +45,14 @@ LIGHT_RED="\[\e[1;31m\]"
 LIGHT_PURPLE="\[\e[1;35m\]"
 
 # for git prompt
-#source /usr/share/git-core/contrib/completion/git-prompt.sh
+source /usr/share/git-core/contrib/completion/git-prompt.sh
 
 # for CLI autocompletion
 if [ -f /etc/bash_completion ]; then
       . /etc/bash_completion
 fi
 
-#export PS1="$ORANGE\[\]Centos$NO_COLOR:$YELLOW\w$WHITE\$(__git_ps1)$GREEN\j\$ $NO_COLOR"
+export PS1="$ORANGE\[\]Centos$NO_COLOR:$YELLOW\w$WHITE\$(__git_ps1)$GREEN\j\$ $NO_COLOR"
 export HISTTIMEFORMAT="%d/%m/%y %T "
 
 #alias tmux='tmux -2 -u'
