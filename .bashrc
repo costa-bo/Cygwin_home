@@ -52,7 +52,8 @@ if [ -f /etc/bash_completion ]; then
       . /etc/bash_completion
 fi
 
-export PS1="$ORANGE\[\]Centos$NO_COLOR:$YELLOW\w$WHITE\$(__git_ps1)$GREEN\j\$ $NO_COLOR"
+# to disable default PS1 comment out /etc/profile.d/z_env_stuff_for_euca.sh:32 PS1 and following if
+export PS1="$CYAN\[\]EE_14$NO_COLOR:$PURPLE\w$GREEN\$(__git_ps1)$YELLOW\j\$ $NO_COLOR"
 export HISTTIMEFORMAT="%d/%m/%y %T "
 
 #alias tmux='tmux -2 -u'
