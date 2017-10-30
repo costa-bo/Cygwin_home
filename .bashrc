@@ -27,16 +27,17 @@ alias vim='nvim'
 
 # Color definitions
 NO_COLOR="\[\e[0m\]"
-WHITE="\[\e[1;37m\]"
+WHITE="\[\e[0;37m\]"
 BLACK="\[\e[0;30m\]"
 BLUE="\[\e[0;34m\]"
 GREEN="\[\e[0;32m\]"
 RED="\[\e[0;31m\]"
-PURPLE="\[\e[0;35m\]"
+PURPLE="\[\e[1;35m\]"
 BROWN="\[\e[0;33m\]"
 YELLOW="\[\e[1;33m\]"
 ORANGE="\[\e[38;5;202m\]"
 CYAN="\[\e[0;36m\]"
+LIGHT_PURPLE="\[\e[0;35m\]"
 LIGHT_GRAY="\[\e[0;37m\]"
 LIGHT_BLUE="\[\e[1;34m\]"
 LIGHT_GREEN="\[\e[1;32m\]"
@@ -53,7 +54,7 @@ if [ -f /etc/bash_completion ]; then
 fi
 
 # to disable default PS1 comment out /etc/profile.d/z_env_stuff_for_euca.sh:32 PS1 and following if
-export PS1="$CYAN\[\]EE_14$NO_COLOR:$PURPLE\w$GREEN\$(__git_ps1)$YELLOW\j\$ $NO_COLOR"
+export PS1="$CYAN\[\]Euca$NO_COLOR:$PURPLE\w$GREEN\$(__git_ps1)$YELLOW\j\$ $NO_COLOR"
 export HISTTIMEFORMAT="%d/%m/%y %T "
 
 #alias tmux='tmux -2 -u'
