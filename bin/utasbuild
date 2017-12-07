@@ -1,0 +1,21 @@
+#!/usr/bin/env bash
+SUPER_PROJECT_PATH="${1}";
+cd "${SUPER_PROJECT_PATH}/moby/build";
+BUILD_HASH="BUILD_"`git log -n1 --format=%h`;
+cd - >/dev/null;
+
+docker run \
+-e http_proxy=http://10.158.100.1:8080 \
+-e https_proxy=http://10.158.100.1:8080 \
+-v /var/run/docker.sock:/var/run/docker.sock \
+-v "${SUPER_PROJECT_PATH}":/home/developer/opentas \
+-v ~/.ssh/:/home/developer/.ssh \
+-v ~/.gitconfig:/home/developer/.gitconfig \
+-e HOME=/home/developer \
+-u root:developer \
+-it \
+--privileged \
+--name build \
+--rm \
+utas-change-registry.dynamic.nsn-net.net:5000/opentas/build:"${BUILD_HASH}"
+
