@@ -1,0 +1,16 @@
+log_rsip_svcchg_opfr    => 0,   # Log RSIPs/SvcChgs to OpFr, 1=YES 0=NO
+log_vop_api_opfr        => 12,  # Log calls to Vop Apis to OpFr, 1=YES 0=NO
+log_mmpc_len_err_opfr   => 3,   # Log MMPC Msg Leh Errors to OpFr, 1=YES 0=NO
+log_rqnt_msg_sent       => 11,  # Log whether or not a RQNT msgs sent to
+                                # the MG, 1=YES 0=NO
+mrhcMaxUsPcmSystem      => 5,   # Max # of US Pcm Systems 
+                                # Currently allowed (Pcm00-Pcm04)
+mrhcMaxWmPcmSystem      => 8,   # Max # of WM Pcm Systems 
+                                # Currently allowed (Pcm00-Pcm03, Pcm07)
+wm_valid_ltu_bitmap     => 90,  # Bitmap of valid WM LTUs. Bit0=LTU0, 
+                                # Bit1=LTU1 ... Bit6=LTU6, Bit7=LTU7
+                                # Current allowed values are LTU0-LTU3 & LTU7
+                                # with LTU7 only used in hiR scenarios
+us_valid_ltu_bitmap     => 41,  # Bitmap of valid US LTUs. Bit0=LTU0, 
+                                # Bit1=LTU1 ...  Bit6=LTU6, Bit7=LTU7
+                                # Current allowed values are LTU0-LTU4

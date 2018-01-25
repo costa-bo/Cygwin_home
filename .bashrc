@@ -20,10 +20,10 @@ PATH=$PATH:/bin:/usr/sbin:/usr/bin:/usr/local/bin:$HOME/bin; export PATH
 #TERM=cons25;   export TERM
 
 BLOCKSIZE=K;    export BLOCKSIZE
-EDITOR=nvim;     export EDITOR
+EDITOR=vim;     export EDITOR
 PAGER=more;     export PAGER
-alias vi='nvim'
-alias vim='nvim'
+alias vi='vim'
+alias vim='vim'
 
 # Color definitions
 NO_COLOR="\[\e[0m\]"
