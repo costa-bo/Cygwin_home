@@ -1,0 +1,319 @@
+																	VIM
+plugings:
+	nerdtree
+	IndexedSearch
+	mark
+	neocomplete
+	cctree
+	conque_gdb
+	pymode
+	tabmerge
+
+
+for fun:
+	matrix
+	tetris
+
+There are different regular expression dialects; some (e.g. Perl's) do not require backslashes in the quantification modifier (\d{2}), some (e.g. sed) require two (\d\{2\}), and in Vim, only the opening curly needs it (\d\{2}). That's the sad state of incompatible regular expression dialects.
+
+You can't restart the recording process in an existing macro. You will need to record a new macro and then join the two together
+
+substitute:
+	%s/[old]/[new]/gc - '%' = 'all lines'
+
+Resize 10 lines:
+	Horizontal: 
+		10 Ctrl-w +/-
+		:res +10
+	Vertically: 
+		10 Ctrl-w </>
+		:vertical resize +10
+	Equal: Ctrl-w =
+
+Rotate Windows:
+	Ctrl-R/r
+
+Show file name:
+	Ctrl-G
+
+Jump backward and forward in the changelist
+	g-;/,
+
+Reload .vimrc without exiting with :source command
+	:so % 
+
+Make current window the only one
+	Ctrl-W o
+	
+Delete the current file / and quit the buffer
+	:Rm / :RM
+	
+Hanging emulator 
+	Ctrl-s/q 
+	
+Copy to clipboard
+	"*y/p
+
+Search range apo 5-20
+	/\%>5l\%<20lsearch 
+	
+Substitute newline otan den douleuei to \n
+	\r
+
+Debug
+	conque gdb
+	
+new file horzontal/vertical
+	:new/vnew
+	
+exit to bash and come back(foreground)
+	ctrl-z/$fg
+	
+mark & jump
+	ma/'a
+
+fold Create / Open / Close / Toggle / Delete (all levels + nested)
+	zf(zF) / zo(zO) / zc(zC) / za(zA) / zd(zD)
+
+fold all Open / Close (all levels + nested)
+	zr(zR) / zm(zM) 
+
+Moving to matching braces
+	%
+
+Back to previous opened file
+	ctrl-6
+
+Background white
+	:set backgroundcolor=light/dark
+
+Move window to a new tab
+	<C-W>T
+
+insert to multiple lines:
+	<C-v> I ESC
+
+	at the end:
+	<C-v> $ A ESC
+
+for unsetted vim :set
+	nu/nonu    -> ruller
+	ic/noic    -> case sensitivity    /\c, /\C
+	incsearch  -> incremental search
+	hlsearch   -> high light search
+	:syntax on -> coloring syntax
+	:tab all   -> all opened files to tabs
+
+delete all lines containing a patern (not containing a pattern or patern2 or pattern3)
+	:g/'pattern'/d (:g!/..1..\|..2..\|..3../d, :v/.../d)
+
+^M at the end of every line
+	:%s/^M$//    (To get ^M, press ^V ^M, where ^ is CTRL on most keyboards)
+
+minize windows:
+	<C-W>_ (horizontal)
+	<C-W>| (Vertical)
+
+scroll all windows(scrollbind)
+	:set scd!
+
+open mulitple files in tabs(-p:)
+	vi ~/*.sh -p
+
+Turning off auto indent when pasting text
+	:set paste // and then :set CCTree
+
+move an existing window to a new tab
+	:tabedit %
+
+Search & replace a word under cursor
+	* ciw ...replacement... 
+	n . // next and repeat
+
+list tags
+	g]
+
+Quote a word, using single quotes
+	ciw'Ctrl+r"'
+		ciw - Delete the word the cursor is on, and end up in insert mode.
+		' - add the first quote.
+		Ctrl+r" - Insert the contents of the " register, aka the last yank/delete.
+		' - add the closing quote. 
+		
+
+Neovim 
+	pip2 install --user neovim
+-------------------------------------------------------------------------------------------------------------------------------------------------------
+																	CCTree
+make a dataBase:
+	$ cscope -b -q (-R -k)
+
+Trace Reverse/Forward
+	Ctrl-\ </>
+	
+1st load DB apo to trunk
+	CCTreeLoadDB cscope.out
+
+2nd Save DB to XReference
+	CCTreeSaveXRefDB cctreedb
+
+3nd Load DB every time you open vim
+	CCTreeLoadXRefDB cctreedb	
+
+-------------------------------------------------------------------------------------------------------------------------------------------------------
+																	conque gdb
+gcc [other flags] -g <source files> -o <output file>
+	
+Debug from vim
+	:conque gdb
+	
+run gdb
+	gdb -tui 
+	file target/bin/PemCtrl.main.bin
+	Ctrl-L // to fix view
+	
+next brakepoint/line/step
+	c/n/s
+
+backtrack = prints from which function is has been called
+	bt
+
+Go to Caller function
+	f
+
+layout src
+	l command: Use gdb command l or list to print the source code in the debug mode. Use l line-number to view a specific line number (or) l function to view a specific function.
+
+info ta brakepoints
+	i b 
+	
+print hex
+	p/x
+	
+print type
+	ptype
+	
+print address
+	p *(..._t *)address
+	
+delete first brakepoint/ all
+	d 1 / clear
+
+print 100 more memory spaces
+	p *len@100
+
+ta kanei cast sta structs tous
+	set p preety
+
+trexa 1 processtest / ola ta processtests(me skoupidia)
+	r -n SLBWarmingEntryRequest / r -n asdf
+
+summarize disk usage
+	du -sh
+
+show all threads
+	thread apply all bt
+	bt
+-------------------------------------------------------------------------------------------------------------------------------------------------------
+																	Cscope
+Uses of the symbol
+	Ctrl-\ s
+	
+Uses of the symbol split horizontal
+	Ctrl-spacebar s
+
+-------------------------------------------------------------------------------------------------------------------------------------------------------
+																	Ctags
+go to definition
+	Ctrl-]
+go back
+	Ctrl-t
+-------------------------------------------------------------------------------------------------------------------------------------------------------
+																	TMUX
+Resize:
+	Ctrl-b alt(hold) Arrows
+
+Restart configuration:
+	:source-file ~/.tmux.conf
+
+List sessions	
+	tmux list-sessions
+
+tmux list-sessions
+
+swap-window
+	swap-window -t 0
+	
+move pane to new window / join windows
+	Ctrl-b ! / j
+
+copy/paste
+	select with mouse/ paste with midle click
+
+convert 2 horizontal panes to vertical panes
+	Ctrl-b space
+
+Reload tmux config file
+	:source-file ~/.tmux.conf
+
+reorder tmux windows
+	swap-window -s 3 -t 1
+
+resize pane
+	Ctrl-b ESC+arrow
+-------------------------------------------------------------------------------------------------------------------------------------------------------
+																	NP++
+Column Mode Select
+	Alt-Shft-Arrow keys or Alt + Left mouse click
+	
+next mark / previous mark
+	F2 / Shift-F2
+-------------------------------------------------------------------------------------------------------------------------------------------------------
+																	UNIX
+find . -type f -name "*name*"
+	and not to remove also dir with rm -r "*name*" . :
+	find . -type f -name '*.o' -delete
+
+grep -r sort_order ./om/cm/*
+
+grep -rn --include=*.xml fng.*list . | awk '{print $2}' | sort | uniq
+
+grep -R --exclude-dir=node_modules
+
+scp `cat  licensesnew | sed 's/\n/ /g'` root@10.104.50.23:/mnt/backup/share/.
+
+grep -rn tlv . | column -s : -t
+
+gia tin ip
+	ip a s 
+
+gia na do arxitektoniki k plirofories epeksergasti
+	lscpu
+
+diff multiple files
+	diff -qrs ... ... (q quietly, r recursive, s reporting identical files)
+
+copy file from filish dev machine to VM
+	scp -P 42728 ... bogiatza@localhost:/home/bogiatza
+
+download from web
+	wget http://......
+
+see who is online
+	w
+
+-------------------------------------------------------------------------------------------------------------------------------------------------------
+																	Pycharm
+
+To run unitests:
+	- settings -> Project:... -> Project Stracture -> + Add Content Root
+		src\scripts\ngisug
+		test\unittest\scripts\ngisug
+		src\lib\libscli\gr
+	- Run -> Edit configuration -> '+' -> Python tests -> Unittests
+		give name
+		script: test\unittest\scripts\ngisug\src\ng_rug_autorun_Suite.py
+		Environment Variables: SRC_ROOT, TEST_ROOT, LIB_ROOT, NG_ROOT, TOOLS_ROOT
+		Working directory: test\unittest\scripts\ngisug
+		tick 'Add content roots to PYTHONPATH'
+

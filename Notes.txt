@@ -1,0 +1,129 @@
+-->General<--
+
+patch -p0 -t < changes.txt 			// -t: mi rotas!
+
+// mporo na do k apo to buildbot>Grid Display> UT_SINGLE_OK> (dialekse ti revision pou einai ola ok(prasina)> Steps and Logfiles> 2.shell 1.stdio> (afou loadari) sto telos >  To run cases manually: #make RUN_SINGLE_CASES=1tin
+
+10.159.68.132 // workaround
+
+BIOS PASSWORD
+	gE51sFqc
+	gEs51Fqc
+
+-------------------------------------------------------------------------------------------------------------------------------------------------------
+For saba(an den douleuei to training)
+	control panel> java>general tab> settings...>Delete Files> "cheack everything"> ok
+	
+-------------------------------------------------------------------------------------------------------------------------------------------------------
+																	Neo Commands
+
+fsswcli -c 				// blepeis ti version tou build pou einai installed sto ng k katevazo tin idia
+fsswcli -v 				// help all available commands
+
+fshascli -s /
+fshascli -s /TraceCtrl 	// status tou trace_ctrl
+
+fsclish 				// gia na deis cli commands 
+eg: show ng feature "tab"
+    gia na do object name kai attributes opos einai ston kodika
+	show config fsClusterId=ClusterRoot fsFragmentId=FlexiNG fsFragmentId=Feature
+
+nginfo -s 				// (status tou ng)
+nginfo -c 				// to idio me -s alla se grammes
+nginfo -v 				// pia deliveri exei
+nginfo -h 				// help
+
+vi /mnt/backup/ci_status/last_installed_pkg_name.txt
+
+cat /etc/passwd
+su fngmanager - login as operator
+
+-------------------------------------------------------------------------------------------------------------------------------------------------------
+																	Acronims
+
+CNN = Corection No Needed 
+PCD = Correction gia specific release k specific pelati
+OoO = Out of Office
+KPI = Key Performance Indicator
+
+
+-------------------------------------------------------------------------------------------------------------------------------------------------------
+gia na deis palioteri revision prepei na pas sto builtbot
+2. deksi click sto branch pou thes, open in a new tab (ex. trunk-> open in new window)
+3. deksi click sto grid display, open in a new tab (ex. grid Display-> open in new window)
+4. sto telos tou url vazo '?width=600' pou to 600 einai k o maximum arithmos
+note kapou paizei k to 'numbuilds=100' alla den ksero pou
+
+-------------------------------------------------------------------------------------------------------------------------------------------------------
+/usr/local/bin/setup_CNG_devel_vm.pl
+
+ps -aux | grep bogiatza
+
+ssh -p 42728 bogiatza@localhost
+
+telnet localhost 32728  // gia klisimo tou cloud
+	q
+
+--way 1: copy from inside VM
+scp bogiatza@fsb.dev.cic.nsn-rdnet.net:/home/bogiatza/diff.bogiatza_trunk .
+
+--way 2: copy from outside of VM
+scp -P $VM_ssh_port $USER@localhost:~/myfile.diff ~/myfile.diff
+
+//delete everything exept .git file
+./tools/scripts/svn-clean -e .git
+
+-------------------------------------------------------------------------------------------------------------------------------------------------------
+
+gia cloud
+	$ type make_cng
+
+-------------------------------------------------------------------------------------------------------------------------------------------------------
+
+alias ll='ls -la --color=auto'
+alias la='ll'
+
+syntax on
+set hlsearch
+set incsearch
+set nu
+set ic
+nnoremap <leader>a :silent execute "grep! -R --include=\*.{c,cpp,h,py} --exclude-dir=./SS_6WIND* " . shellescape('<cword>') .  " ."<cr>:copen 12<cr>:redraw!<cr>
+
+-------------------------------------------------------------------------------------------------------------------------------------------------------
+
+gia ta dynamic sockets
+	netstat -x
+
+Latest Green revision (on Tuonela):
+	/home/autocom/trunk/trunk_debug_AB4/ATCA/latest_green
+
+conf_prox validator
+
+mercury waters?
+
+-------------------------------------------------------------------------------------------------------------------------------------------------------
+																	Virtual Box internet
+At VB
+	Network -> Attached to NAT
+
+At VM
+	gui Network Proxy -> 10.144.1.10:8080
+
+At VM terminal:
+	sudo vi /etc/apt/apt.conf -> Acquire::http::proxy "http://10.144.1.10:8080/";
+								 Acquire::ftp::proxy "ftp://10.144.1.10:8080/";
+								 Acquire::https::proxy "https://10.144.1.10:8080/";
+
+-------------------------------------------------------------------------------------------------------------------------------------------------------
+																	git proxy   
+git config --global http.proxy http://10.144.1.10:8080
+
+-------------------------------------------------------------------------------------------------------------------------------------------------------
+																	NTas
+openssl x509 -in cert.pem -text -noout
+
+check memory leaks
+	valgrind
+
+
