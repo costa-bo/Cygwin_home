@@ -4,12 +4,6 @@
 .ssh
 .vim
 .viminfo
-.cache
-.helm
-work
 a.out
 
-# Eucalyptous
-opentas
-testaholics
-
+noikaris
