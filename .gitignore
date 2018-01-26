@@ -4,6 +4,7 @@
 .ssh
 .vim
 .viminfo
+.inputrc
 a.out
 
 noikaris

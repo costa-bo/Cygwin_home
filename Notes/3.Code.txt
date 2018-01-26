@@ -1,0 +1,97 @@
+Checkout source code (always in your scratch directory /scratch/bogiatza)
+	(your Greek build-machine is caladan 10.158.67.81 ..your Finnish can be found from ohman mail)
+
+	svn co -r 294346 svn+ssh://bogiatza@svne1.access.nokiasiemensnetworks.com/isource/svnroot/flexi_bng/trunk trunk
+
+Tortoise
+	https://bogiatza@svne1.access.nokiasiemensnetworks.com/isource/svnroot/flexi_bng/trunk
+
+-------------------------------------------------------------------------------------------------------------------------------------------------------
+Set ENVIRONMENT & BUILD
+	env_oct						// for mips
+	env_int						// for i686
+
+	rm -rf amp_pkg/ 			// gia diagrafi tou paliou amp_pkg an thelo na ksanakano
+	cougar_make 				// creates amp_pkg directory and to compile all the processes
+	
+	tar czvf NG15_bogiatza_pem_ctrl_revision12345.tgz amp_pkg x86_pkg //gia full binary. kanei kai amp_pkg kai x86_pkg
+
+	http://viini.dev.cic.nsn-rdnet.net/twiki/bin/view/SA/HowToLoadTestBinariesToATCA#Fastpath 
+
+	- Make libraries:
+	/scratch/mantzari/trunk_septem/src/lib: run
+	- Make process: run 
+	/scratch/mantzari/trunk_septem/src/bin/session_ctrl
+	- scp binary to ng:
+	
+	cd /scratch/mantzari/trunk/src/bin/session_ctrl/target.fp5_mips.amp/bin/session_ctrl.fp5_mips_bin
+	
+	scp session_ctrl.fp5_mips_bin root@10.104.50.23:/root/.
+
+	Cloud
+		make MAKE_TARGET=vgp_x86 BUILD_TARGET=VGP cloud_ng_pkg
+
+
+-------------------------------------------------------------------------------------------------------------------------------------------------------
+Every commit must be tested:
+	Test RPMs, Unitests, Valgrid tests, Catapult script changes, Python libraries
+		scratch run_unitest.sh
+
+	How to compile unittest, processtest:
+		export DISABLE_COVERAGE=1 is always needed
+		cd $TOOLS_ROOT/UnitTest++/ -- to compile the unitest++ tool (its needed the 1st time that you download your directory)
+			make all
+
+	check if there are any errors inside the xml which are generated
+		./tools/scripts/testsummary.sh 
+
+	Run Sanity suit with the changes
+
+	make > unittests.log 2>&1 & 		//  '2>&1 &' einai gia na trexei sto background (k na klisei t PC)
+	tail -f unittest.log/				// sta test/unittest gia na do ta error
+	
+	To run 1 unitest:
+		make 1st time ta unitest tou process i tis lib 
+		cd target/bin
+		./libisu.bin -l // gia list ta test
+		./libisu.bin -s run_cases
+
+-------------------------------------------------------------------------------------------------------------------------------------------------------
+Upload files στο ATCA/CNG
+	
+	update Devm στην έκδοση(revision) του ATCA/CNG
+		/mnt/images/<TAB>
+	*Πρέπει να ρωτήσω και τους testers για να είμαι 100% σίγουρος.
+	
+	Backup αρχεία που πρόκειται να αλλαχθούν από το ATCA/CNG
+		cp /mnt/sysimg/opt/nsn/SS_SCLI/etc/commands_xml/fngSgwProfile.cli.xml ~/.
+	
+	Secure copy των αρχείων μου στο ATCA/CNG
+		scp om/cm/protocol_conf/gtpInfoEnrichment/serving_node/scli_modules/fngServingNode.cli.xml root@10.104.50.23:/mnt/sysimg/opt/nokiasiemens/SS_SCLI/etc/commands_xml/
+		scp om/cm/protocol_conf/gtpInfoEnrichment/serving_node/scli_modules/fngServingNode.cli.xml root@10.104.50.23:/opt/nokiasiemens/SS_SCLI/etc/commands_xml/
+	
+	Check files transfered correctly(with the hash value)
+		md5sum [file]
+
+	mount το φάκελο με τα αρχεία
+		mount -o remount,rw /mnt/sysimg/
+
+		Gia na exo rights gia na kano copy tin process gia AS:
+			mount -o remount, rw cp session_ctrl.bin ~/backup/ 
+
+		Gia na allakso validator so prepei na allakso rghts:
+			mount -o remount rw,noatime /mnt/sysimg
+
+		Gia na exo rights gia na kano copy tin process gia CLA:
+			mount -o remount, rw /mnt/images/R_NG15_PT1_r246422_AB2_debug/mips64/wnd/
+
+	(Μόνο σε XML και Python αρχεία)
+	Στο ATCA/CNG κάνουμε restart to CLI server και refresh την cache
+		fshascli -rn /SCLIFwkServer
+		fsclish
+			refresh cli cache
+
+	Gia na parei to binary restart tis AS
+		px gia ATCA 
+		fshascli -rn /as7-* // restart tin as7 
+		fshascli -rn /as10-*

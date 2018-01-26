@@ -1,0 +1,47 @@
+1) Download Eclipse
+	a) Check if you can access the following link in firefox:
+		https://svne1.access.nokiasiemensnetworks.com/isource/svnroot/flexi_bng/ (nsn username, password)
+	b) Download and install Eclipse IDE for C/C++ Developers. (Kepler Packages) -- 32-bit version (64-bit used to have issues)
+	c) Install Subversive SVN Team Provider plugin. (http://subclipse.tigris.org/servlets/ProjectProcess?pageID=p4wYuA)
+	d) New -> Import -> SVN -> Checkout from svn -> Create a new repository (https://svne1.access.nokiasiemensnetworks.com/isource/svnroot/flexi_bng)
+ 
+	It will ask for this "svn+ssh://$USER@svne1.access.nokiasiemensnetworks.com/isource/svnroot/flexi_bng" 
+                                   and username and password for authentication.
+	Then choose as wizard C Project -> Give a project name (choose your location..or use default)								   
+								   
+	e) Click Finish and wait (quite a long) for Eclipse to finish Building/Refreshing workspace and indexing.
+
+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+Beginning you should have mapped your devmachine drive in your windows pc. (with SFTP Net Drive Free )
+
+Keep in mind that if you are working on /scratch you need to make an alias folder inside /home/yourname/ of the folder you work. SFTP Net Drive Free will not let you map a /scratch folder directly.
+
+1. Download and install Eclipse IDE for C/C++ Developers.
+2. Install Subversive SVN Team Provider plugin.
+3. From Eclipse go 
+	New -> Repository Location -> (and in General tab) insert  "svn+ssh://$USER@svne1.access.nokiasiemensnetworks.com/isource/svnroot/flexi_bng" 
+                                   and username and password for authentication.
+							
+4. New -> Import -> C/C++ -> Existing Code as Makefile Project and click Next.
+5. In the next window choose a name for your project and fill the Existing Code Location with the path of your project folder (from the DEV Machine mapped drive).
+6. Uncheck the "Show only available toolchains that support this platform" and select "Linux GCC".
+7. Click Finish and wait (quite a long) for Eclipse to finish Building/Refreshing workspace and indexing.
+
+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+Eclipse Preferences 
+
+Tools -> Preferences -> General -> Editors -> Text Editors
+Display tab width: 4
+Check "Insert spaces for tabs"
+
+Tools -> Preferences -> General -> Workspace
+Text file encoding -> Other: UTF-8
+New text file line delimiter -> Other: Unix
+
+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+mine:
+
+1. New -> Repository Location -> (and in General tab) insert  "svn+ssh://$USER@svne1.access.nokiasiemensnetworks.com/isource/svnroot/flexi_bng" 
+2. new>other>Project from SVN> https://svne1.access.nokiasiemensnetworks.com/isource/svnroot/flexi_bng/trunk/ > Makefile Project with Existing Code> brose> new file(eg. trunknew) > finish
+
+to delete svn Repositories Eclipse: Window -> show view -> Other... -> SVN repositories

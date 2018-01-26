@@ -1,0 +1,7 @@
+vim or neovim
+git
+tmux
+tree
+python3
+pip3
+

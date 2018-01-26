@@ -46,7 +46,7 @@ LIGHT_RED="\[\e[1;31m\]"
 LIGHT_PURPLE="\[\e[1;35m\]"
 
 # for git prompt
-source /usr/share/git-core/contrib/completion/git-prompt.sh
+#source /usr/share/git-core/contrib/completion/git-prompt.sh
 
 # for CLI autocompletion
 if [ -f /etc/bash_completion ]; then
@@ -54,7 +54,8 @@ if [ -f /etc/bash_completion ]; then
 fi
 
 # to disable default PS1 comment out /etc/profile.d/z_env_stuff_for_euca.sh:32 PS1 and following if
-export PS1="$CYAN\[\]Euca$NO_COLOR:$PURPLE\w$GREEN\$(__git_ps1)$YELLOW\j\$ $NO_COLOR"
+#export PS1="$CYAN\[\]\u$NO_COLOR:$PURPLE\w$GREEN\$(__git_ps1 ' (%s)')$YELLOW\j\$ $NO_COLOR"
+export PS1="$CYAN\[\]\u$NO_COLOR:$PURPLE\w$YELLOW\j\$ $NO_COLOR"
 export HISTTIMEFORMAT="%d/%m/%y %T "
 
 #alias tmux='tmux -2 -u'
