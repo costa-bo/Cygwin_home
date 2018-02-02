@@ -5,6 +5,10 @@
 .vim
 .viminfo
 .inputrc
+.cache
 a.out
+
+# This si cygwin configuration
+.minttyrc 
 
 noikaris

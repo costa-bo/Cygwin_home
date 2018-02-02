@@ -63,6 +63,10 @@ if [ ! $TMUX ]; then
     tmux -2 -u a
 fi
 
+export http_proxy=http://10.158.100.1:8080/
+export https_proxy=http://10.158.100.1:8080/
+export ftp_proxy=http://10.158.100.1:8080/
+
 # ALIASES
 alias sb="source ~/.bash_profile"
 alias ls="ls -h -F --color=auto"

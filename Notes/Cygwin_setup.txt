@@ -1,0 +1,12 @@
+vim or neovim
+git
+tmux
+tree
+python3
+pip3
+wget
+
+libjpeg-devel
+
+$ easy_instlal virtualenv
+$ easy_install virtualenvwrapper

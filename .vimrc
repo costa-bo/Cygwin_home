@@ -26,6 +26,7 @@ Plugin 'vim-scripts/Conque-GDB'
 "Plugin 'klen/python-mode'
 "Plugin 'vim-scripts/CCTree'
 Plugin 'ervandew/supertab'
+Plugin 'tweekmonster/django-plus.vim'
 
 " Highlights
 Plugin 'nathanalderson/yang.vim'
