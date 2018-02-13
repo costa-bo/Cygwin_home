@@ -5,6 +5,7 @@ tree
 python3
 pip3
 wget
+bash-completion
 
 libjpeg-devel
 
