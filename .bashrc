@@ -1,5 +1,9 @@
 # .bashrc
 
+# Github 
+# U: costa-bo
+# pass:k******1
+
 # Source global definitions
 #if [ -f /etc/bashrc ]; then
 #	. /etc/bashrc
