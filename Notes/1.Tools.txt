@@ -1,319 +1,466 @@
-																	VIM
-plugings:
-	nerdtree
-	IndexedSearch
-	mark
-	neocomplete
-	cctree
-	conque_gdb
-	pymode
-	tabmerge
-
-
-for fun:
-	matrix
-	tetris
-
-There are different regular expression dialects; some (e.g. Perl's) do not require backslashes in the quantification modifier (\d{2}), some (e.g. sed) require two (\d\{2\}), and in Vim, only the opening curly needs it (\d\{2}). That's the sad state of incompatible regular expression dialects.
-
-You can't restart the recording process in an existing macro. You will need to record a new macro and then join the two together
-
-substitute:
-	%s/[old]/[new]/gc - '%' = 'all lines'
-
-Resize 10 lines:
-	Horizontal: 
-		10 Ctrl-w +/-
-		:res +10
-	Vertically: 
-		10 Ctrl-w </>
-		:vertical resize +10
-	Equal: Ctrl-w =
-
-Rotate Windows:
-	Ctrl-R/r
-
-Show file name:
-	Ctrl-G
-
-Jump backward and forward in the changelist
-	g-;/,
-
-Reload .vimrc without exiting with :source command
-	:so % 
-
-Make current window the only one
-	Ctrl-W o
-	
-Delete the current file / and quit the buffer
-	:Rm / :RM
-	
-Hanging emulator 
-	Ctrl-s/q 
-	
-Copy to clipboard
-	"*y/p
-
-Search range apo 5-20
-	/\%>5l\%<20lsearch 
-	
-Substitute newline otan den douleuei to \n
-	\r
-
-Debug
-	conque gdb
-	
-new file horzontal/vertical
-	:new/vnew
-	
-exit to bash and come back(foreground)
-	ctrl-z/$fg
-	
-mark & jump
-	ma/'a
-
-fold Create / Open / Close / Toggle / Delete (all levels + nested)
-	zf(zF) / zo(zO) / zc(zC) / za(zA) / zd(zD)
-
-fold all Open / Close (all levels + nested)
-	zr(zR) / zm(zM) 
-
-Moving to matching braces
-	%
-
-Back to previous opened file
-	ctrl-6
-
-Background white
-	:set backgroundcolor=light/dark
-
-Move window to a new tab
-	<C-W>T
-
-insert to multiple lines:
-	<C-v> I ESC
-
-	at the end:
-	<C-v> $ A ESC
-
-for unsetted vim :set
-	nu/nonu    -> ruller
-	ic/noic    -> case sensitivity    /\c, /\C
-	incsearch  -> incremental search
-	hlsearch   -> high light search
-	:syntax on -> coloring syntax
-	:tab all   -> all opened files to tabs
-
-delete all lines containing a patern (not containing a pattern or patern2 or pattern3)
-	:g/'pattern'/d (:g!/..1..\|..2..\|..3../d, :v/.../d)
-
-^M at the end of every line
-	:%s/^M$//    (To get ^M, press ^V ^M, where ^ is CTRL on most keyboards)
-
-minize windows:
-	<C-W>_ (horizontal)
-	<C-W>| (Vertical)
-
-scroll all windows(scrollbind)
-	:set scd!
-
-open mulitple files in tabs(-p:)
-	vi ~/*.sh -p
-
-Turning off auto indent when pasting text
-	:set paste // and then :set CCTree
-
-move an existing window to a new tab
-	:tabedit %
-
-Search & replace a word under cursor
-	* ciw ...replacement... 
-	n . // next and repeat
-
-list tags
-	g]
-
-Quote a word, using single quotes
-	ciw'Ctrl+r"'
-		ciw - Delete the word the cursor is on, and end up in insert mode.
-		' - add the first quote.
-		Ctrl+r" - Insert the contents of the " register, aka the last yank/delete.
-		' - add the closing quote. 
-		
-
-Neovim 
-	pip2 install --user neovim
+Sublime
+    Fold All
+        <C-K><C-1>
 -------------------------------------------------------------------------------------------------------------------------------------------------------
-																	CCTree
-make a dataBase:
-	$ cscope -b -q (-R -k)
+VIM
+    plugings:
+        nerdtree
+        IndexedSearch
+        mark
+        neocomplete
+        cctree
+        conque_gdb
+        pymode
+        tabmerge
 
-Trace Reverse/Forward
-	Ctrl-\ </>
-	
-1st load DB apo to trunk
-	CCTreeLoadDB cscope.out
 
-2nd Save DB to XReference
-	CCTreeSaveXRefDB cctreedb
+    for fun:
+        matrix
+        tetris
 
-3nd Load DB every time you open vim
-	CCTreeLoadXRefDB cctreedb	
+    There are different regular expression dialects; some (e.g. Perl's) do not require backslashes in the quantification modifier (\d{2}), some (e.g. sed) require two (\d\{2\}), and in Vim, only the opening curly needs it (\d\{2}). That's the sad state of incompatible regular expression dialects.
 
+    You can't restart the recording process in an existing macro. You will need to record a new macro and then join the two together
+
+    substitute:
+        %s/[old]/[new]/gc - '%' = 'all lines'
+
+    Resize 10 lines:
+        Horizontal: 
+            10 Ctrl-w +/-
+            :res +10
+        Vertically: 
+            10 Ctrl-w </>
+            :vertical resize +10
+        Equal: Ctrl-w =
+
+    Rotate Windows:
+        Ctrl-R/r
+
+    Show file name:
+        Ctrl-G
+
+    Jump backward and forward in the changelist
+        g-;/,
+
+    Reload .vimrc without exiting with :source command
+        :so % 
+
+    Make current window the only one
+        Ctrl-W o
+        
+    Delete the current file / and quit the buffer
+        :Rm / :RM
+        
+    Hanging emulator 
+        Ctrl-s/q 
+        
+    Copy to clipboard
+        "*y/p
+
+    Search range apo 5-20
+        /\%>5l\%<20lsearch 
+        
+    Substitute newline otan den douleuei to \n
+        \r
+
+    Debug
+        conque gdb
+        
+    new file horzontal/vertical
+        :new/vnew
+        
+    exit to bash and come back(foreground)
+        ctrl-z/$fg
+        
+    mark & jump
+        ma/'a
+
+    fold Create / Open / Close / Toggle / Delete (all levels + nested)
+        zf(zF) / zo(zO) / zc(zC) / za(zA) / zd(zD)
+
+    fold all Open / Close (all levels + nested)
+        zr(zR) / zm(zM) 
+
+    Moving to matching braces
+        %
+
+    Back to previous opened file
+        ctrl-6
+
+    Background white
+        :set backgroundcolor=light/dark
+
+    Move window to a new tab
+        <C-W>T
+
+    insert to multiple lines:
+        <C-v> I ESC
+
+        at the end:
+        <C-v> $ A ESC
+
+    for unsetted vim :set
+        nu/nonu    -> ruller
+        ic/noic    -> case sensitivity    /\c, /\C
+        incsearch  -> incremental search
+        hlsearch   -> high light search
+        :syntax on -> coloring syntax
+        :tab all   -> all opened files to tabs
+
+    delete all lines containing a patern (not containing a pattern or patern2 or pattern3)
+        :g/'pattern'/d (:g!/..1..\|..2..\|..3../d, :v/.../d)
+
+    ^M at the end of every line
+        :%s/^M$//    (To get ^M, press ^V ^M, where ^ is CTRL on most keyboards)
+
+    minize windows:
+        <C-W>_ (horizontal)
+        <C-W>| (Vertical)
+
+    scroll all windows(scrollbind)
+        :set scd!
+
+    open mulitple files in tabs(-p:)
+        vi ~/*.sh -p
+
+    Turning off auto indent when pasting text
+        :set paste // and then :set CCTree
+
+    move an existing window to a new tab
+        :tabedit %
+
+    Search & replace a word under cursor
+        * ciw ...replacement... 
+        n . // next and repeat
+
+    list tags
+        g]
+
+    Quote a word, using single quotes
+        ciw'Ctrl+r"'
+            ciw - Delete the word the cursor is on, and end up in insert mode.
+            ' - add the first quote.
+            Ctrl+r" - Insert the contents of the " register, aka the last yank/delete.
+            ' - add the closing quote. 
+            
+
+    Neovim 
+        pip2 install --user neovim
+
+    syntax on
+    set hlsearch
+    set incsearch
+    set nu
+    set ic
+    nnoremap <leader>a :silent execute "grep! -R --include=\*.{c,cpp,h,py} --exclude-dir=./SS_6WIND* " . shellescape('<cword>') .  " ."<cr>:copen 12<cr>:redraw!<cr>
 -------------------------------------------------------------------------------------------------------------------------------------------------------
-																	conque gdb
-gcc [other flags] -g <source files> -o <output file>
-	
-Debug from vim
-	:conque gdb
-	
-run gdb
-	gdb -tui 
-	file target/bin/PemCtrl.main.bin
-	Ctrl-L // to fix view
-	
-next brakepoint/line/step
-	c/n/s
+CCTree
+    make a dataBase:
+        $ cscope -b -q (-R -k)
 
-backtrack = prints from which function is has been called
-	bt
+    Trace Reverse/Forward
+        Ctrl-\ </>
+        
+    1st load DB apo to trunk
+        CCTreeLoadDB cscope.out
 
-Go to Caller function
-	f
+    2nd Save DB to XReference
+        CCTreeSaveXRefDB cctreedb
 
-layout src
-	l command: Use gdb command l or list to print the source code in the debug mode. Use l line-number to view a specific line number (or) l function to view a specific function.
-
-info ta brakepoints
-	i b 
-	
-print hex
-	p/x
-	
-print type
-	ptype
-	
-print address
-	p *(..._t *)address
-	
-delete first brakepoint/ all
-	d 1 / clear
-
-print 100 more memory spaces
-	p *len@100
-
-ta kanei cast sta structs tous
-	set p preety
-
-trexa 1 processtest / ola ta processtests(me skoupidia)
-	r -n SLBWarmingEntryRequest / r -n asdf
-
-summarize disk usage
-	du -sh
-
-show all threads
-	thread apply all bt
-	bt
+    3nd Load DB every time you open vim
+        CCTreeLoadXRefDB cctreedb   
 -------------------------------------------------------------------------------------------------------------------------------------------------------
-																	Cscope
-Uses of the symbol
-	Ctrl-\ s
-	
-Uses of the symbol split horizontal
-	Ctrl-spacebar s
+conque gdb
+    gcc [other flags] -g <source files> -o <output file>
+        
+    Debug from vim
+        :conque gdb
+        
+    run gdb
+        gdb -tui 
+        file target/bin/PemCtrl.main.bin
+        Ctrl-L // to fix view
+        
+    next brakepoint/line/step
+        c/n/s
 
+    backtrack = prints from which function is has been called
+        bt
+
+    Go to Caller function
+        f
+
+    layout src
+        l command: Use gdb command l or list to print the source code in the debug mode. Use l line-number to view a specific line number (or) l function to view a specific function.
+
+    info ta brakepoints
+        i b 
+        
+    print hex
+        p/x
+        
+    print type
+        ptype
+        
+    print address
+        p *(..._t *)address
+        
+    delete first brakepoint/ all
+        d 1 / clear
+
+    print 100 more memory spaces
+        p *len@100
+
+    ta kanei cast sta structs tous
+        set p preety
+
+    trexa 1 processtest / ola ta processtests(me skoupidia)
+        r -n SLBWarmingEntryRequest / r -n asdf
+
+    summarize disk usage
+        du -sh
+
+    show all threads
+        thread apply all bt
+        bt
 -------------------------------------------------------------------------------------------------------------------------------------------------------
-																	Ctags
-go to definition
-	Ctrl-]
-go back
-	Ctrl-t
+Cscope
+    Uses of the symbol
+        Ctrl-\ s
+        
+    Uses of the symbol split horizontal
+        Ctrl-spacebar s
 -------------------------------------------------------------------------------------------------------------------------------------------------------
-																	TMUX
-Resize:
-	Ctrl-b alt(hold) Arrows
-
-Restart configuration:
-	:source-file ~/.tmux.conf
-
-List sessions	
-	tmux list-sessions
-
-tmux list-sessions
-
-swap-window
-	swap-window -t 0
-	
-move pane to new window / join windows
-	Ctrl-b ! / j
-
-copy/paste
-	select with mouse/ paste with midle click
-
-convert 2 horizontal panes to vertical panes
-	Ctrl-b space
-
-Reload tmux config file
-	:source-file ~/.tmux.conf
-
-reorder tmux windows
-	swap-window -s 3 -t 1
-
-resize pane
-	Ctrl-b ESC+arrow
+Ctags
+    go to definition
+        Ctrl-]
+    go back
+        Ctrl-t
 -------------------------------------------------------------------------------------------------------------------------------------------------------
-																	NP++
-Column Mode Select
-	Alt-Shft-Arrow keys or Alt + Left mouse click
-	
-next mark / previous mark
-	F2 / Shift-F2
+TMUX
+    Resize:
+        Ctrl-b alt(hold) Arrows
+
+    Restart configuration:
+        :source-file ~/.tmux.conf
+
+    List sessions   
+        tmux list-sessions
+
+    tmux list-sessions
+
+    swap-window
+        swap-window -t 0
+        
+    move pane to new window / join windows
+        Ctrl-b ! / j
+
+    copy/paste
+        select with mouse/ paste with midle click
+
+    convert 2 horizontal panes to vertical panes
+        Ctrl-b space
+
+    Reload tmux config file
+        :source-file ~/.tmux.conf
+
+    reorder tmux windows
+        swap-window -s 3 -t 1
+
+    resize pane
+        Ctrl-b ESC+arrow
 -------------------------------------------------------------------------------------------------------------------------------------------------------
-																	UNIX
-find . -type f -name "*name*"
-	and not to remove also dir with rm -r "*name*" . :
-	find . -type f -name '*.o' -delete
-
-grep -r sort_order ./om/cm/*
-
-grep -rn --include=*.xml fng.*list . | awk '{print $2}' | sort | uniq
-
-grep -R --exclude-dir=node_modules
-
-scp `cat  licensesnew | sed 's/\n/ /g'` root@10.104.50.23:/mnt/backup/share/.
-
-grep -rn tlv . | column -s : -t
-
-gia tin ip
-	ip a s 
-
-gia na do arxitektoniki k plirofories epeksergasti
-	lscpu
-
-diff multiple files
-	diff -qrs ... ... (q quietly, r recursive, s reporting identical files)
-
-copy file from filish dev machine to VM
-	scp -P 42728 ... bogiatza@localhost:/home/bogiatza
-
-download from web
-	wget http://......
-
-see who is online
-	w
-
+NP++
+    Column Mode Select
+        Alt-Shft-Arrow keys or Alt + Left mouse click
+        
+    next mark / previous mark
+        F2 / Shift-F2
 -------------------------------------------------------------------------------------------------------------------------------------------------------
-																	Pycharm
+UNIX
+    find . -type f -name "*name*"
+        and not to remove also dir with rm -r "*name*" . :
+        find . -type f -name '*.o' -delete
 
-To run unitests:
-	- settings -> Project:... -> Project Stracture -> + Add Content Root
-		src\scripts\ngisug
-		test\unittest\scripts\ngisug
-		src\lib\libscli\gr
-	- Run -> Edit configuration -> '+' -> Python tests -> Unittests
-		give name
-		script: test\unittest\scripts\ngisug\src\ng_rug_autorun_Suite.py
-		Environment Variables: SRC_ROOT, TEST_ROOT, LIB_ROOT, NG_ROOT, TOOLS_ROOT
-		Working directory: test\unittest\scripts\ngisug
-		tick 'Add content roots to PYTHONPATH'
+    grep -r sort_order ./om/cm/*
+
+    grep -rn --include=*.xml fng.*list . | awk '{print $2}' | sort | uniq
+
+    grep -R --exclude-dir=node_modules
+
+    scp `cat  licensesnew | sed 's/\n/ /g'` root@10.104.50.23:/mnt/backup/share/.
+
+    grep -rn tlv . | column -s : -t
+
+    gia tin ip
+        ip a s 
+
+    gia na do arxitektoniki k plirofories epeksergasti
+        lscpu
+
+    diff multiple files
+        diff -qrs ... ... (q quietly, r recursive, s reporting identical files)
+
+    copy file from filish dev machine to VM
+        scp -P 42728 ... bogiatza@localhost:/home/bogiatza
+
+    download from web
+        wget http://......
+
+    see who is online
+        w
+
+    alias ll='ls -la --color=auto'
+    alias la='ll'
+
+    gia ta dynamic sockets
+        netstat -x
+
+    cat /etc/passwd
+
+    check memory leaks
+        valgrind
+
+    '2>&1 &' einai gia na trexei sto background(akoma k na klisei t PC)
+        make > unittests.log 2>&1 &
+
+    check hash
+        md5sum [file]
+-------------------------------------------------------------------------------------------------------------------------------------------------------
+Pycharm
+    To run unitests:
+        - settings -> Project:... -> Project Stracture -> + Add Content Root
+            src\scripts\ngisug
+            test\unittest\scripts\ngisug
+            src\lib\libscli\gr
+        - Run -> Edit configuration -> '+' -> Python tests -> Unittests
+            give name
+            script: test\unittest\scripts\ngisug\src\ng_rug_autorun_Suite.py
+            Environment Variables: SRC_ROOT, TEST_ROOT, LIB_ROOT, NG_ROOT, TOOLS_ROOT
+            Working directory: test\unittest\scripts\ngisug
+            tick 'Add content roots to PYTHONPATH'
+-------------------------------------------------------------------------------------------------------------------------------------------------------
+Virtual Box internet
+    At VB
+        Network -> Attached to NAT
+
+    At VM
+        gui Network Proxy -> 10.144.1.10:8080
+
+    At VM terminal:
+        sudo vi /etc/apt/apt.conf -> Acquire::https::proxy "https://10.144.1.10:8080/";
+                                     Acquire::http::proxy "http://10.144.1.10:8080/";
+                                     Acquire::ftp::proxy "ftp://10.144.1.10:8080/";
+-------------------------------------------------------------------------------------------------------------------------------------------------------
+GIT
+    git proxy
+        git config --global http.proxy http://10.144.1.10:8080
+
+    pull = fetch + merge
+
+    Se poio remote dixnei to local branch sou
+        git branch -vv
+
+    update about the remote comits
+        git fetch gitlab
+
+    bazei ta dika sou commit mprosta apo ta tou remote
+        git rebase gitlab/ng_test 
+    Grouping commits
+        git rebase -i 'to comit prin apo ekei pou thelo na ta grouparo'
+
+    Push your commits
+        git push gitlab cloud_test
+    Push non-fast-forward-changes
+        git push -f gitlab non_atca_equavalent_nodes
+
+    DELETE All you commits kai fernei to local brach sou opos to remote!! (den vgazei pote conflict)
+        git reset --hard gitlab/ng_test
+
+    Delete a remote branch
+        git push (gitlab) --delete (branch)
+
+    Panta merge apo to Destination branch
+        git merge mybranch 
+
+    sta confict:
+        <<<<<< HEAD (curent branch)
+        ...
+        ======
+        ....
+        >>>>>> (source branch)
+
+        git add
+        git commit -m 'merge from (source branch)'
+
+    Revert
+        Reverting undoes a commit by creating a new commit
+
+    show what happens with the remotes
+        git remote show gitlab
+
+    to remove deleted branched from remote 
+        git remote prune gitlab
+
+    change the remote of a branch
+        git br (branch) --set-upstream-to (new_remote)/(branch)
+
+    Delete remote branch
+        git push (remote) --delete (branch)
+
+
+    git rebase -i gitlab/viper-testing
+        den vazei ta meged commits
+
+    git push (-u) bo_isug (topiko branch):(remote branch)
+        gia na pusharei to topiko branch sto branch tou remote pou thelo kai na mi dimiourgisei kainourio
+        -u: gia na setarei to upstream. 
+
+    git show all branches remotes
+        git br -a -vv
+
+
+
+    patch apo git diff
+        patch -p1 < git_file.diff
+
+    meta to rebase sto viper-testing, FORCE push -f:
+        git push -f bo_isug PR126756_RUG_cant_find_MgmtIP:PR126756_RUG_cant_find_MgmtIP
+-------------------------------------------------------------------------------------------------------------------------------------------------------
+CMakeLists.txt
+    to target_link_libraries(<kosta> <...>) einai gia to makefile 
+        make kosta
+-------------------------------------------------------------------------------------------------------------------------------------------------------
+Windows
+    abort windows from restarting
+        shutdown /a
+
+    BIOS PASSWORD
+        gE51sFqc
+        gEs51Fqc
+
+    For saba(an den douleuei to training)
+        control panel> java>general tab> settings...>Delete Files> "cheack everything"> ok
+-------------------------------------------------------------------------------------------------------------------------------------------------------
+Acronims
+    CNN = Corection No Needed 
+    PCD = Correction gia specific release k specific pelati
+    OoO = Out of Office
+    KPI = Key Performance Indicator
+-------------------------------------------------------------------------------------------------------------------------------------------------------
+Cygwin_setup
+    vim or neovim
+    git
+    tmux
+    tree
+    python3
+    pip3
+    wget
+    bash-completion
+
+    libjpeg-devel
+
+    $ easy_install virtualenv
+    $ easy_install virtualenvwrapper
 

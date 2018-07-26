@@ -1,0 +1,125 @@
+in Python there are 5 types: numbers, strings, lists - [], tuples - (), dictionaries - {}
+
+print ("5 + 3 = ", 5+3) # note the comma
+
+print(x, end='') # NO new line
+
+if 
+elif
+else
+
+for i in [1,2,3,4,4]:
+    ...
+
+num_list[[1,2,3][3,2,1,9]]
+
+random.randrange(0,100)
+
+def addNumber(asd, asd):
+    ...
+
+print(addNumber(1, 3))
+
+
+Object oriented programming     # model real word object using code. RW objects have attributs(color, weight, etc...), abilities(walk, talk, eat, etc...)
+    has attributes using variables inside classes
+
+class Animal:
+    __xxxx = 0     # private variables -- Atributes (to change them or get value, we need to use function inside the class)
+
+    def set_name(self, name):     # self mean, it allows an object to refer to itself inside the class
+        self.__name = name
+
+    def get_name(self):     #  abilities -- 
+        return self.__name
+
+Constactor -- to setup or initialise an object!
+
+    def __init__(self, name, height, weight, sound): 
+        self.__name = name 
+
+    return "{} is {} cm tall an d{} kg and say {}"
+
+
+
+class Dog(Animal)  # inheret
+    __owner = ''
+
+    def __init__(self, name, height, weight, sound, owner):
+        self.__owner = owner
+        super(Dog, self).__init__(name, height, weight, sound)
+
+    def ...
+
+
+Polymorphism
+
+
+yparxoun static methods kai instance methods(objects)
+    vlepe src/ng_isug_start_Suite.py:44 #  StartStep().ng_isug_start_Suitet("R_FSPR5CAT_1.69.1.2_321027_r118249")
+
+
+named format:
+'{a} {kati}'.format(a=a,kati=b)
+
+possitionaled fromat:
+'{0} {1}'.format(a,b)
+
+
+
+python has if...else
+    for ...:
+        ...
+    else:
+        ...
+
+    an den allaksei tpt sto for i an den ektelestei kan paei sto else
+
+
+instance variable:
+    self.a
+variable:
+    a
+instance attribute b:
+    self.a.b
+attribute b:
+    a.b
+
+
+class A()
+    self.atr
+
+    def kati(self)
+        self.atr
+
+    @staticmethod
+    def kati2()
+        "I cannot call the 'atr' here"
+
+A().kati
+
+A.kati2
+
+------------------------------------------
+
+https://www.youtube.com/watch?v=Z1Yd7upQsXY
+
+gia 'a=1' sti c/c++ skeutomaste ena kouti pou periexei ton arithmo '1'
+          eno sti python to 'a' einai mia etiketa(name tag) pou anaferete(refered) ston arithmo '1'.
+
+          opote an sti sinexei exoume 'b=1' tote 'a' & 'b' anaferontai sto idio variable '1'. 
+          Omos an exoume 'c=a' tote to 'c' anaferete sti variable pou to 'a' anaferete(dld sto 1)!! kai OXI sto 'a'!
+            auto giati ama kanoume meta 'a=3' tote to c einai 1 oxi 3.
+
+------------------------------------------
+
+sti dinami tou 2(sto tetragono): 
+    h ** 2 == h * h
+
+------------------------------------------
+
+ta raw string einai einai gia to backslash
+    Regular         | Raw
+    "ab*"           = r"ab*"
+    "\\\\se"        = r"\\se"
+    "\\w+\\s+\\1"   = r"\w+\s+\1"
