@@ -328,6 +328,23 @@ UNIX
     check hash
         md5sum [file]
 -------------------------------------------------------------------------------------------------------------------------------------------------------
+localhost VM
+
+1.  Install apache (for CentOS):
+    a.  sudo yum install httpd
+    b.  sudo systemctl enable httpd
+    c.  sudo systemctl start httpd
+2.  Forword Guest Port 80 to Host Port 8080 in VirtualBox
+3.  In /etc/httpd/conf/httpd.conf
+    a.  Find from which folder apache serves (search for DocumentRoot). Probably /var/www/html
+    b.  Change DirectoryIndex from index.html to log.html
+4.  Restart apache:
+    systemctl restart htttp
+5.  Run a testcase:
+    pybot --loglevel DEBUG --outputdir /var/www/html <path to .robot>
+6.  Open your browser to localhost:8080 and hopefully you 'll see the testcase execution log
+
+-------------------------------------------------------------------------------------------------------------------------------------------------------
 Pycharm
     To run unitests:
         - settings -> Project:... -> Project Stracture -> + Add Content Root
