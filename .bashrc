@@ -26,8 +26,8 @@ PATH=$PATH:/bin:/usr/sbin:/usr/bin:/usr/local/bin:$HOME/bin; export PATH
 BLOCKSIZE=K;    export BLOCKSIZE
 EDITOR=vim;     export EDITOR
 PAGER=more;     export PAGER
-alias vi='vim'
-alias vim='vim'
+alias vi='nvim'
+alias vim='nvim'
 
 # Color definitions
 NO_COLOR="\[\e[0m\]"
