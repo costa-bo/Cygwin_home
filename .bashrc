@@ -57,8 +57,9 @@ if [ -f /etc/bash_completion ]; then
       . /etc/bash_completion
 fi
 
+# export PS1="$ORANGE\[\]Centos$NO_COLOR:$YELLOW\w$WHITE\$(__git_ps1)$GREEN\j\$ $NO_COLOR"
 # to disable default PS1 comment out /etc/profile.d/z_env_stuff_for_euca.sh:32 PS1 and following if
-#export PS1="$CYAN\[\]\u$NO_COLOR:$PURPLE\w$GREEN\$(__git_ps1 ' (%s)')$YELLOW\j\$ $NO_COLOR"
+# export PS1="$CYAN\[\]\u$NO_COLOR:$PURPLE\w$GREEN\$(__git_ps1 ' (%s)')$YELLOW\j\$ $NO_COLOR"
 export PS1="$CYAN\[\]\u$NO_COLOR:$PURPLE\w$YELLOW\j\$ $NO_COLOR"
 export HISTTIMEFORMAT="%d/%m/%y %T "
 
@@ -72,7 +73,6 @@ export https_proxy=http://10.158.100.1:8080/
 export ftp_proxy=http://10.158.100.1:8080/
 
 # ALIASES
-alias sb="source ~/.bash_profile"
 alias ls="ls -h -F --color=auto"
 alias la="ls -la"
 alias ll="la"
@@ -80,19 +80,8 @@ alias lf="less +F"
 alias grep="grep --color"
 alias tmux='tmux -2'
 alias compare="kompare -o - &"
-alias vundle="git clone https://github.com/VundleVim/Vundle.vim.git ~/.vim/bundle/Vundle.vim"
-#alias fail="grep -i "failures=.[^0]." $NG_ROOT/test/unittest/scripts/ngisug/*.xml"
-#alias error="grep -i "errors=.[^0]." $NG_ROOT/test/unittest/scripts/ngisug/*.xml"
-#alias erfa="grep -i 'errors=.[^0].\|failures=.[^0].' $NG_ROOT/test/unittest/scripts/ngisug/*.xml"
-alias etcdgr="etcdctl ls --recursive -p | grep -v '/$' | xargs -n 1 -I% sh -c 'echo -n %:; etcdctl get %;'"
 alias tree="tree -C" # use color 
 alias kgp="kubectl get pod"
-#alias ibc="docker exec -i -t build /bin/bash"
-alias ibc="~/bin/utasbuild ~/opentas"
-alias ilp="kubectl exec -it lmf-server bash"
-alias inp="kubectl exec -it netconf-server bash"
-alias llmf="kubectl logs lmf-server "
-alias edf="export DUMMY_FILE_CLS=/ephemeral/opentas/pmod/SS_LNXlmf/tst/dummy_file_cls.json"
 
 #   SSH
 alias CORIN="ssh bogiatza@10.158.67.161"
@@ -115,16 +104,3 @@ alias EE_vtas="ssh -i ~/ee_cloud/kbo_key_pair1.pem root@10.157.3.41"
  
 #   FUNNLY
 alias data='while true; do head -c200 /dev/urandom | od -An -w46 -x | grep -E --color "([[:alpha:]][[:digit:]]){2}"; sleep 0.5; done'
-
-#   DIRECTORIES                         
-alias b="cd ${NG_ROOT}"
-alias clm="cd /home/costa/work/vgp_trunk/SS_CLM/clm/CLM-3.2"
-alias lmf="cd ~/opentas/pmod/SS_LNXlmf/"
-alias 938="cd ~/opentas/ft/vtas-testsuites/suites/FC014938"
-alias 191="cd ~/opentas/ft/vtas-testsuites/suites/FC014191"
-alias taf="cd ~/opentas/ft/vtas-taf"
-
-alias bin="cd ${SRC_ROOT}/bin"
-alias lib="cd ${SRC_ROOT}/lib"
-
-alias ulib="cd ${NG_ROOT}/test/unittest/lib"

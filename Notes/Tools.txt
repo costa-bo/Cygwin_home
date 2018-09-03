@@ -465,6 +465,8 @@ Acronims
     PCD = Correction gia specific release k specific pelati
     OoO = Out of Office
     KPI = Key Performance Indicator
+    RCA = Root Couse Analisys
+    
 -------------------------------------------------------------------------------------------------------------------------------------------------------
 Cygwin_setup
     vim or neovim
