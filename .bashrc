@@ -31,36 +31,38 @@ alias vim='nvim'
 
 # Color definitions
 NO_COLOR="\[\e[0m\]"
-WHITE="\[\e[0;37m\]"
 BLACK="\[\e[0;30m\]"
-BLUE="\[\e[0;34m\]"
-GREEN="\[\e[0;32m\]"
 RED="\[\e[0;31m\]"
-PURPLE="\[\e[1;35m\]"
+GREEN="\[\e[0;32m\]"
 BROWN="\[\e[0;33m\]"
-YELLOW="\[\e[1;33m\]"
-ORANGE="\[\e[38;5;202m\]"
+BLUE="\[\e[0;34m\]"
+PURPLE="\[\e[0;35m\]"
 CYAN="\[\e[0;36m\]"
-LIGHT_PURPLE="\[\e[0;35m\]"
 LIGHT_GRAY="\[\e[0;37m\]"
-LIGHT_BLUE="\[\e[1;34m\]"
-LIGHT_GREEN="\[\e[1;32m\]"
-LIGHT_CYAN="\[\e[1;36m\]"
+
+LIGHT_GRAY="\[\e[1;30m\]"
 LIGHT_RED="\[\e[1;31m\]"
+LIGHT_GREEN="\[\e[1;32m\]"
+YELLOW="\[\e[1;33m\]"
+LIGHT_BLUE="\[\e[1;34m\]"
 LIGHT_PURPLE="\[\e[1;35m\]"
+LIGHT_CYAN="\[\e[1;36m\]"
+WHITE="\[\e[1;37m\]"
+
+ORANGE="\[\e[38;5;202m\]"
 
 # for git prompt
-#source /usr/share/git-core/contrib/completion/git-prompt.sh
+source /usr/share/git-core/contrib/completion/git-prompt.sh
 
 # for CLI autocompletion
 if [ -f /etc/bash_completion ]; then
       . /etc/bash_completion
 fi
 
-# export PS1="$ORANGE\[\]Centos$NO_COLOR:$YELLOW\w$WHITE\$(__git_ps1)$GREEN\j\$ $NO_COLOR"
+ export PS1="$LIGHT_RED\[\]\u$NO_COLOR@$ORANGE\h$NO_COLOR:$YELLOW\w$WHITE\$(__git_ps1)$GREEN\j\$ $NO_COLOR"
 # to disable default PS1 comment out /etc/profile.d/z_env_stuff_for_euca.sh:32 PS1 and following if
 # export PS1="$CYAN\[\]\u$NO_COLOR:$PURPLE\w$GREEN\$(__git_ps1 ' (%s)')$YELLOW\j\$ $NO_COLOR"
-export PS1="$CYAN\[\]\u$NO_COLOR:$PURPLE\w$YELLOW\j\$ $NO_COLOR"
+#export PS1="$CYAN\[\]\u$NO_COLOR:$PURPLE\w$YELLOW\j\$ $NO_COLOR"
 export HISTTIMEFORMAT="%d/%m/%y %T "
 
 #alias tmux='tmux -2 -u'
