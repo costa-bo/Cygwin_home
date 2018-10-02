@@ -23,7 +23,7 @@ Plugin 'vim-scripts/Tabmerge'
 "Plugin 'vim-scripts/CCTree'
 "Plugin 'vim-scripts/Conque-GDB'
 "Plugin 'Valloric/YouCompleteMe'
-Plugin 'python-mode/python-mode'
+"Plugin 'python-mode/python-mode'
 "Plugin 'vim-scripts/CCTree'
 "Plugin 'ervandew/supertab'
 
