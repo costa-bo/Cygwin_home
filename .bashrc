@@ -103,6 +103,9 @@ alias EE_vtas="ssh -i ~/ee_cloud/kbo_key_pair1.pem root@10.157.3.41"
 # alias m=$PAGER
 # alias ll='ls -laFo'
 # alias g='egrep -i'
+
+# Load more alias
+source nokia/.bash_alias
  
 #   FUNNLY
 alias data='while true; do head -c200 /dev/urandom | od -An -w46 -x | grep -E --color "([[:alpha:]][[:digit:]]){2}"; sleep 0.5; done'
