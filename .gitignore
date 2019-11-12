@@ -7,6 +7,7 @@
 .inputrc
 .cache
 a.out
+.netrwhist
 
 # This si cygwin configuration
 .minttyrc 
