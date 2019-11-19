@@ -26,8 +26,8 @@ PATH=$PATH:/bin:/usr/sbin:/usr/bin:/usr/local/bin:$HOME/bin; export PATH
 BLOCKSIZE=K;    export BLOCKSIZE
 EDITOR=vim;     export EDITOR
 PAGER=more;     export PAGER
-alias vi='nvim'
-alias vim='nvim'
+alias vi='vim'
+alias vim='vim'
 
 # Color definitions
 NO_COLOR="\[\e[0m\]"
@@ -52,7 +52,8 @@ WHITE="\[\e[1;37m\]"
 ORANGE="\[\e[38;5;202m\]"
 
 # for git prompt
-source /usr/share/git-core/contrib/completion/git-prompt.sh
+#source /usr/share/git-core/contrib/completion/git-prompt.sh
+source ~/.bash_git
 
 # for CLI autocompletion
 if [ -f /etc/bash_completion ]; then
@@ -97,6 +98,10 @@ alias BALDUR="ssh bogiatza@10.85.40.151"
 alias HYPERION="ssh bogiatza@10.158.67.84"
 alias CALADAN="ssh bogiatza@10.158.67.81"
 alias EE_vtas="ssh -i ~/ee_cloud/kbo_key_pair1.pem root@10.157.3.41"
+
+# DIRS
+alias bo="cd /cygdrive/c/Users/kbogiatzakis/"
+alias itj="cd /cygdrive/c/Users/kbogiatzakis/IdeaProjects"
 
 # # some useful aliases
 # alias h='fc -l'
