@@ -27,7 +27,7 @@ BLOCKSIZE=K;    export BLOCKSIZE
 EDITOR=vim;     export EDITOR
 PAGER=more;     export PAGER
 alias vi='vim'
-alias vim='vim'
+#alias vim='nvim'
 
 # Color definitions
 NO_COLOR="\[\e[0m\]"
