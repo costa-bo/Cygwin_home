@@ -20,11 +20,10 @@ Plugin 'tpope/vim-fugitive'
 Plugin 'vim-scripts/IndexedSearch'
 Plugin 'vim-scripts/Mark--Karkat'
 Plugin 'vim-scripts/Tabmerge'
-"Plugin 'vim-scripts/CCTree'
+Plugin 'vim-scripts/CCTree'
 "Plugin 'vim-scripts/Conque-GDB'
-"Plugin 'Valloric/YouCompleteMe'
+Plugin 'Valloric/YouCompleteMe'
 "Plugin 'python-mode/python-mode'
-"Plugin 'vim-scripts/CCTree'
 "Plugin 'ervandew/supertab'
 
 " Highlights
