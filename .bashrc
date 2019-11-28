@@ -12,10 +12,14 @@
 # Uncomment the following line if you don't like systemctl's auto-paging feature:
 # export SYSTEMD_PAGER=
 
-# User specific aliases and functions
 
+#   JDK
+export JAVA_HOME="/cygdrive/c/PROGRA~1/Java/jdk-13.0.1/"
+
+# User specific aliases and functions
 # add /usr/games or /usr/X11R6/bin if you want
-PATH=$PATH:/bin:/usr/sbin:/usr/bin:/usr/local/bin:$HOME/bin; export PATH
+PATH=$PATH:/bin:/usr/sbin:/usr/bin:/usr/local/bin:$JAVA_HOME/bin 
+export PATH
 
 # Setting TERM is normally done through /etc/ttys.  Do only override
 # if you're sure that you'll never log in via telnet or xterm or a
@@ -66,6 +70,10 @@ fi
 #export PS1="$CYAN\[\]\u$NO_COLOR:$PURPLE\w$YELLOW\j\$ $NO_COLOR"
 export HISTTIMEFORMAT="%d/%m/%y %T "
 
+# MAVEN
+#unset M2_HOME
+#export M3_HOME=/opt/apache-maven-3.6.2
+
 #alias tmux='tmux -2 -u'
 if [ ! $TMUX ]; then 
     tmux -2 -u a
@@ -74,6 +82,7 @@ fi
 #export http_proxy=http://10.158.100.1:8080/
 #export https_proxy=http://10.158.100.1:8080/
 #export ftp_proxy=http://10.158.100.1:8080/
+
 
 # ALIASES
 alias ls="ls -h -F --color=auto"

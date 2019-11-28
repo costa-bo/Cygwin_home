@@ -22,10 +22,14 @@ Plugin 'vim-scripts/Mark--Karkat'
 Plugin 'vim-scripts/Tabmerge'
 "Plugin 'vim-scripts/CCTree'
 "Plugin 'vim-scripts/Conque-GDB'
-"Plugin 'Valloric/YouCompleteMe'
+"Plugin 'ycm-core/YouCompleteMe'
 "Plugin 'python-mode/python-mode'
 "Plugin 'vim-scripts/CCTree'
 "Plugin 'ervandew/supertab'
+"Plugin 'starcraftman/vim-eclim' "for java autocomplete
+"Plugin 'artur-shaik/vim-javacomplete2' "for java autocomplete
+"Plugin 'Shougo/neocomplete.vim' "for java autocomplete
+
 
 " Highlights
 Plugin 'nathanalderson/yang.vim'
@@ -159,30 +163,30 @@ nnoremap <leader>a :silent execute "grep! -R --include=\*.{c,cpp,h,py} --exclude
 nnoremap <leader>A :silent execute "grep! -R --include=\*.{c,cpp,h,py} --exclude-dir=./SS_6WIND* " . shellescape('<cWORD>') .  " ."<cr>:copen 12<cr>:redraw!<cr>
 
 
-"" opens search results in a window w/ links and highlight the matches
+" opens search results in a window w/ links and highlight the matches
 "command! -nargs=+ Grep execute 'silent grep! -I -r -n --exclude *.{json} . -e <args>' | copen | execute 'silent /<args>'
-"
-"" Check if NERDTree is open or active
-"function! rc:isNERDTreeOpen()        
+
+" Check if NERDTree is open or active
+"function! IsNERDTreeOpen()        
 "  return exists("t:NERDTreeBufName") && (bufwinnr(t:NERDTreeBufName) != -1)
 "endfunction
 "
 "" Call NERDTreeFind iff NERDTree is active, current window contains a modifiable
 "" file, and we're not in vimdiff
-"function! rc:syncTree()
-"  if &modifiable && rc:isNERDTreeOpen() && strlen(expand('%')) > 0 && !&diff
+"function! SyncTree()
+"  if &modifiable && IsNERDTreeOpen() && strlen(expand('%')) > 0 && !&diff
 "    NERDTreeFind
 "    wincmd p
 "  endif
 "endfunction
 "
 "" Highlight currently open buffer in NERDTree
-"autocmd BufEnter * call rc:syncTree()
-
-set runtimepath+=~/.vim,~/.vim/after
-set packpath+=~/.vim
+"autocmd BufEnter * call SyncTree()
+"
+"set runtimepath+=~/.vim,~/.vim/after
+"set packpath+=~/.vim
 "source ~/.vimrc
 
-    if has('nvim')
-        tnoremap <Esc> <C-\><C-n>
-    endif
+if has('nvim')
+    tnoremap <Esc> <C-\><C-n>
+endif
