@@ -8,7 +8,7 @@
 # Ctags binary (must be Exuberant ctags to work)
 CTAGSBIN=/usr/bin/ctags
 CSCOPEBIN=/usr/bin/cscope
-ROOTDIR=$NG_ROOT
+ROOTDIR=/cygdrive/c/Users/kbogiatzakis/IdeaProjects/stsc-ng-uitt
 SCANDIRS=$BNG_ROOT
 # Putting FP6_WIND_ROOT into the scan path produces a huge database (1,2 GB)
 #SCANDIRS="$NG_ROOT $FP_6WIND_ROOT /scratch/finocchi/work/linux-2.6.21.7-hrt1-NSN49_fp_octwnd_bl-WR2.0ap_standard"
@@ -46,7 +46,7 @@ echo "Generating Tag files in $ROOTDIR for $SCANDIRS (and measuring time of the 
 pushd $ROOTDIR >/dev/null
 # start all tag generation commands (and print time it took, might help in debugging)
 find $ROOTDIR \
-    -name '*.[ch]' -o -name '*.cpp' -o -name '*.py' -o -path '*/SS_6WIND_5.*' -prune -type f  > $ROOTDIR/cscope.files
+    -name '*.[ch]' -o -name '*.properties'  -o -name '*.java' -o -name '*.cpp' -o -name '*.py' -o -path '*/SS_6WIND_5.*' -prune -type f  > $ROOTDIR/cscope.files
 time ($CTAGSBIN -R --c++-kinds=+p --fields=+iaS --extra=+qf --language-force=C++ -L $ROOTDIR/cscope.files && \
     $CSCOPEBIN -b -q)
 # return to directory we were in before
