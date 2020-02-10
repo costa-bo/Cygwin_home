@@ -345,6 +345,19 @@ localhost VM
 6.  Open your browser to localhost:8080 and hopefully you 'll see the testcase execution log
 
 -------------------------------------------------------------------------------------------------------------------------------------------------------
+PortForwarding VB
+At VB Settings:
+	1. Settings -> Network -> "Attached to: NAT" -> Advanced -> Port Forwarding -> Add new portForwarding Rule('+' icon) -> Protocol: TCP, Host Port 2222, Guest Port 22.
+
+At VB Environment:
+	1. sudo vi /etc/ssh/sshd_config
+	2. AlloAgentForwarding yes, AllowTcpForwarding yes, GatewayPorts yes, X11Forwarding yes
+
+At Host Environmant:
+	1. ipconfig -> get guestIp
+At Putty:
+	2. username@guestIp port 2222
+-------------------------------------------------------------------------------------------------------------------------------------------------------
 Pycharm
     To run unitests:
         - settings -> Project:... -> Project Stracture -> + Add Content Root
