@@ -111,6 +111,7 @@ alias EE_vtas="ssh -i ~/ee_cloud/kbo_key_pair1.pem root@10.157.3.41"
 # DIRS
 alias bo="cd /cygdrive/c/Users/kbogiatzakis/"
 alias itj="cd /cygdrive/c/Users/kbogiatzakis/IdeaProjects"
+alias b="cd /cygdrive/c/Users/kbogiatzakis/IdeaProjects"
 
 # # some useful aliases
 # alias h='fc -l'
